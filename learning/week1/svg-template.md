@@ -92,7 +92,10 @@ Draw negative numbers in red and positive numbers in green.
     {% for rows in data %}
         <tr>
             <!-- Add your code here  -->
-            <td>10</td><td>15</td>
+    	    {% for columns in rows %}
+            	<td>{{columns}}
+		</td>
+	    {% endfor %}
         </tr>
     {% endfor %}
 </table>
