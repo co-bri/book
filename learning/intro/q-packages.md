@@ -1,4 +1,4 @@
-# Q: What programming languages have the most packages?
+Q: What programming languages have the most packages?
 
 ## Data
 
@@ -7,7 +7,13 @@
 ((Markdown table))
 
 ## Top five
-
+| Language | # of Packages (2013)|
+| ---------|:-------------:|
+| Java          | 56697|
+| Ruby          | 55035|
+| Python        | 32180|
+| Javascript    | 27688|
+| Perl		| 24092|
 {% svg %}
 
 <!-- barchart with five bars -->
