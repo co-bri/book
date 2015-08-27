@@ -30,5 +30,5 @@
 
 ## Recommendation
 
-We used SVG as it allows easy graphical presntation of a sall amount of data.  A
+We used SVG as it allows easy graphical presentation of a sall amount of data.  A
 Bar chart can be easily drawn from a set of data points
