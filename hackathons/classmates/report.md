@@ -51,7 +51,7 @@ return (data.comments.length - (countCS + countComputerScience))
 {% endlodash %}
 There are {{result}} students in the class who are not CS majors
 
-# What is the user id zhya215?
+# What is the user id for the login zhya215?
 
 {% lodash %}
 var y = _.filter(data.comments, function(n){

@@ -17,32 +17,31 @@ including the controls, widgets ...etc.
 
 # How big the deal Tableau really is?
 
-(write your answer based on the statistics you can find online)
+Tableau has 26,000 customers as of 2014 according to Forbes Magazine
+http://www.forbes.com/sites/greatspeculations/2015/04/15/a-closer-look-at-tableaus-customer-base-growth/
 
-# (Question 1)
+Tableau clocked the fastest sales growth, 84 percent, of any leading business analytics company last year, according to researcher IDC.
+http://www.bloomberg.com/bw/articles/2014-12-11/high-demand-for-chartmaking-software-boosts-qlik-and-tableau
 
-![screenshot](screenshot.png)
+# How many of the students are CS majors?
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+![screenshot](CSMajorCount.png)
+Look for the count for the group of Compuer Science, this is the students who listed CS or Computer Science as majors
 
-# (Question 2)
+# How many peoples names start with A?
 
-![screenshot](screenshot.png)
+![screenshot](StartswithA.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+The students by name are listed and all the students whos names starts with A have been place in a group.
 
-# (Question 3)
+# How many of the students are not CS majors?
 
-![screenshot](screenshot.png)
+![screenshot](nonCSCount.png)
+All the majors that are not CS have been put into a group
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
 
-# (Question 4)
+# What is the user id for the login zhya215?
 
-![screenshot](screenshot.png)
+![screenshot](id.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+You just have to look at the data here, no special formatting is needed
