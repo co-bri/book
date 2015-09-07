@@ -1,0 +1,27 @@
+Name,Major, Second Major, Favorite Programming Langiage, Favorite Food, Second Favorite Food
+William Farmer,Applied Math, w/ Minor in Computer Science,Python,Sushi,,
+Tristan Wagar,Computer Science,,Javascript,Steak,,
+Mingqi Liew,Computer Science,,C,Thai food,,
+Fadhil Suhendi,Computer Science,,Java,Sushi,,
+Heather Witte,Computer Science,Python,Indian food
+Zach Lamb,Computer Science,,Python,Italian 
+Zhili Yang,Computer Science,,Python, Ruby,Chinese food, Sushi
+John Cronk,Mechanical Engineering,,Python,Curry,,
+Andrew Krodinger,Computer Science,,C,Sushi,,
+Denis Kazakov,Applied Math, Computer Science,,Python,Blueberry Scones, Sushi,,
+Nicole Woytarowicz,Applied Math , Computer Science,Haskell,Mediterranean food,, 
+satchel spencer,cs,,javascript,lentils,,
+TJ Romanowski,Computer Science,,Java,Mexican
+Andrew Linenfelser,Computer Science,Environmental Science,C,Italian,Mexican
+Kevin Gifford Ph.D., Aerospace, CS,C,Tacos,,
+Caleb Hsu,Computer Science,,Python,Japanese Curry,
+Sushant Mittal,Electrical and Computer Engineering,,JAVA,Indian food,,
+Parker Illig,Computer Science , Quantitative Economics,C++,Mexican,
+Robert Kendl,Computer Science,,C# or C++,Greek
+Dian Ding,Computer Science, Mathematics,C++,Dumplings,,
+Karen Blakemore,MS CS, BS Math,Python,Vegan,,
+Sanketh S Shetty,ECEE,,Python,Indian food,,
+Andrey Shprengel,CS,,Python,Mexican,,
+Brian McKean,NetApp,,C,The quiche I just made!,,
+Name:Kari Santos,ICTD,,Language: C (I can't help it, I still think in C...) but JS is closing in,Food: A really good milkshake!,,
+Andrew Berumen,CSCI,,Java,Food: Brazilian Churrascuria,,
