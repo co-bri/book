@@ -56,46 +56,71 @@ Now it's your turn to answer the following questions using the real data.
 ### How many issues have been created to date in our class's forum repository?
 
 {% githubapi %}
-// enter the URL to access the Github API to get the data for this question
+https://api.github.com/repos/bigdatahci2015/forum/issues
 {% endgithubapi %}
+{{ data | json }}
 
 {% lodash %}
-// add lodash code to process the data and generate the answer
-return 'something'
+return data.length
 {% endlodash %}
+There are {{result}} issues.
 
 ### What are the titles of these issues?
+{% lodash %}
+var titles = _.pluck(data, 'title')
+var niceTitles = _.forEach(titles,function(n){
+	n = n + "\n";
+});
+console.log(titles)
+console.log(niceTitles)
+return niceTitles 
 
-(answer)
+{% endlodash %}
+The titles of the issues are {{result}}.
 
 ### How many repository have been created to date for our class?
 
 Our class's Github organization is [bigdatahci2015](https://github.com/bigdatahci2015/).
 
+### enter the URL to access the Github API to get the data for this question
 {% githubapi %}
-// enter the URL to access the Github API to get the data for this question
+https://api.github.com/users/bigdatahci2015/repos
 {% endgithubapi %}
 
+{{ data | json }}
+
 {% lodash %}
-// add lodash code to process the data and generate the answer
-return 'something'
+return data.length
 {% endlodash %}
+The are {{result}} repositories that have been created for our class
 
 ### What are the fork counts of our class's repositories?
-
-(answer)
-
+{% lodash %}
+var forkNames = _.pluck(data,"name")
+var forkCounts = _.pluck(data,"forks")
+return forkCounts
+{% endlodash %}
+The repository fork counts are {{result}}
 ### How many public repositories does the user `doubleshow` have?
 
 {% githubapi %}
-// enter the URL to access the Github API to get the data for this question
+https://api.github.com/users/doubleshow
 {% endgithubapi %}
+{{ data | json }}
 
 {% lodash %}
-// add lodash code to process the data and generate the answer
-return 'something'
+var repos = data.public_repos
+return repos
 {% endlodash %}
+The user doubleshow has {{result}} public repositories
 
 ### How many public gists does the user `doubleshow` have?
-
-(answer)
+{% githubapi %}
+https://api.github.com/users/doubleshow
+{% endgithubapi %}
+{{ data | json }}
+{% lodash %}
+var gists = data.public_gists
+return gists
+{% endlodash %}
+The user doubleshow has {{result}} public gists

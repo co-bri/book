@@ -1,4 +1,4 @@
-# Lodash Drills
+# Lodash Drill
 
 Complete the following Lodash exercises. The goal is to become really good at
 functional programming paradigm (e.g., `_.map`, `_.filter`, `_.all`, `_.any` ...etc) and
@@ -74,8 +74,13 @@ What names begin with the letter J?
 
 {% solution %}
 
-var result = 'not done'
-return result
+var names = _.map(data, function(d){
+    return d.name
+})
+var Jnames = _.filter(names, function(n){
+	return _.startsWith(n,'J')
+})
+return Jnames
 
 {% endlodashexercise %}
 
@@ -96,8 +101,10 @@ How many Johns?
 3
 
 {% solution %}
-var result = 'not done'
-return result
+var Johns = _.filter(data,function(n){
+	return n.name == 'John'
+})
+return Johns.length
 
 {% endlodashexercise %}
 
@@ -119,8 +126,15 @@ What are all the first names?
 ["John","Mary","Peter","Ben"]
 
 {% solution %}
-var result = 'not done'
-return result
+console.log(data)
+var names = _.pluck(data,'name')
+
+console.log(names)
+var fnames = _.map(names,function(n){
+	return 	n.split(" ")[0]
+})
+console.log(fnames)
+return fnames
 
 {% endlodashexercise %}
 
