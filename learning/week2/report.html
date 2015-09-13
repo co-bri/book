@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Sun Sep 13 2015 14:20:08 GMT-0600 (MDT)">
+    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Sun Sep 13 2015 16:51:24 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -592,29 +592,59 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="report">Report</h1>
-<p>There are 26 students who gave a self-introduction. As a
-class, we brainstormed and came up with a long list of further questions we can
-ask based on this data. Our team chose to tackle on the following:</p>
-<h1 id="-question-1">(Question 1)</h1>
+<p>As a class, we brainstormed and came up with a long list of further questions we can ask based
+on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
+the following:</p>
+<h1 id="how-many-of-the-students-are-cs-majors">How many of the students are CS majors?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
-</pre></p>
-<p>(writeup)</p>
-<h1 id="-question-2">(Question 2)</h1>
+<span class="keyword">var</span> x = _.filter(data.comments, <span class="keyword">function</span>(n){
+        <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;CS&quot;</span>);
+});
+
+<span class="keyword">var</span> countCS = _.size(x)
+<span class="keyword">var</span> y = _.filter(data.comments, <span class="keyword">function</span>(n){
+        <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Computer Science&quot;</span>);
+});
+<span class="keyword">var</span> countComputerScience = _.size(y)
+
+<span class="keyword">return</span> (countCS + countComputerScience)
+</pre>
+The number of CS majors in the class is 20</p>
+<h1 id="how-many-peoples-names-start-with-a">How many peoples names start with A?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
-</pre></p>
-<p>(writeup)</p>
-<h1 id="-question-3">(Question 3)</h1>
+<span class="keyword">var</span> y = _.filter(data.comments, <span class="keyword">function</span>(n){
+    <span class="keyword">var</span> text = n.body
+    <span class="keyword">var</span> text2 = _.first(text.split(<span class="string">&quot;\r\n&quot;</span>))
+    <span class="keyword">var</span> text3 = _.last(text2.split(<span class="string">&quot;Name:&quot;</span>))
+        <span class="keyword">return</span> text3.charAt(<span class="number">1</span>) == <span class="string">&apos;A&apos;</span>
+});
+<span class="keyword">var</span> z = _.size(y)
+<span class="keyword">return</span> z 
+</pre>
+There are 4 students names start with A</p>
+<h1 id="how-many-of-the-students-are-not-cs-majors">How many of the students are not CS majors?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
-</pre></p>
-<p>(writeup)</p>
-<h1 id="-question-4">(Question 4)</h1>
+<span class="keyword">var</span> x = _.filter(data.comments, <span class="keyword">function</span>(n){
+        <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;CS&quot;</span>);
+});
+
+<span class="keyword">var</span> countCS = _.size(x)
+<span class="keyword">var</span> y = _.filter(data.comments, <span class="keyword">function</span>(n){
+        <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Computer Science&quot;</span>);
+});
+<span class="keyword">var</span> countComputerScience = _.size(y)
+<span class="keyword">return</span> (data.comments.length - (countCS + countComputerScience))
+</pre>
+There are 6 students in the class who are not CS majors</p>
+<h1 id="what-is-the-user-id-for-the-login-zhya215">What is the user id for the login zhya215?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> y = _.filter(data.comments, <span class="keyword">function</span>(n){
+        <span class="keyword">return</span> _.includes(n.user,<span class="string">&quot;zhya215&quot;</span>);
+});
+z = _.pluck(y,<span class="string">&quot;id&quot;</span>)
+<span class="keyword">return</span> z
 </pre></p>
-<p>(writeup)</p>
+<p>The user with id zhya215 is 134036701</p>
 
                     
                     </section>
