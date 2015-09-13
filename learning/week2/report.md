@@ -1,5 +1,4 @@
-{% import './data.html' as data %}
-
+{% import '../../hackathons/classmates/data.html' as data %}
 # Report
 
 As a class, we brainstormed and came up with a long list of further questions we can ask based
