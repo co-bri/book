@@ -26,7 +26,7 @@ There are {{result}} courses in IPHY with 4 credit hours
 
 
 # Which are the top 5 departments in terms of number of 4000 level classes? 
-# by Brian McKean
+# by Brian 
 
 {% lodash %}
 var groups = _.groupBy(data,function(n){
@@ -34,9 +34,12 @@ var groups = _.groupBy(data,function(n){
 })
 var subject4k = _.mapValues(groups,function(n){ 
 	var  classLvl = _.pluck(n,"CrsLvlNum")
+	console.log(classLvl)
 	classes4k = _.filter(classLvl,function(n){
-		return n = "4XXX"
+		console.log(n)
+		return n == "4XXX"
 	})
+	console.log(classes4k)
         return  classes4k.length
 })
 var sort4k = _.sortBy(subject4k, function(n,key){
