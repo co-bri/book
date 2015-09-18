@@ -34,12 +34,9 @@ var groups = _.groupBy(data,function(n){
 })
 var subject4k = _.mapValues(groups,function(n){ 
 	var  classLvl = _.pluck(n,"CrsLvlNum")
-	console.log(classLvl)
 	classes4k = _.filter(classLvl,function(n){
-		console.log(n)
 		return n == "4XXX"
 	})
-	console.log(classes4k)
         return  classes4k.length
 })
 var sort4k = _.sortBy(subject4k, function(n,key){
