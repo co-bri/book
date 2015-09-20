@@ -24,7 +24,7 @@ return  fours
 {% endlodash %}
 There are {{result}} courses in IPHY with 4 credit hours
 
-
+![screenshot](IPHYClasses.png)
 # Which are the top 5 departments in terms of number of 4000 level classes? 
 # by Brian 
 
@@ -63,6 +63,7 @@ return result
 {% endfor %}
 </table>
 
+![screenshot](4KClasses.png)
 # Which instructors course has the highest enrollment?
 # by Zhili
 
@@ -81,6 +82,7 @@ return prof
 {% endlodash %}
 The instructor of the course with the highest enrollment is {{result}}
 
+![screenshot](ClassEnroll.png)
 #  Which department has the highest enrollment? By Tristan
 
 {% lodash %}
@@ -104,7 +106,7 @@ return "answer"
 {% endlodash %}
 The department with the biggest enrollment is {{result}}
 
-
+![screenshot](SubjectEnroll.png)
 #  What instructors has the highest rating? By Andrew
 
 {% lodash %}
@@ -130,3 +132,6 @@ The instructors with the highest rating are
     </tr>
 {% endfor %}
 </table>
+
+![screenshot](ProfRate1.png)
+![screenshot](ProfRate2.png)
