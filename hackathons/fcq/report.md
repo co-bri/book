@@ -63,7 +63,7 @@ return result
 {% endfor %}
 </table>
 
-![screenshot](4KClasses.png)
+![screenshot](4K.png)
 # Which instructors course has the highest enrollment?
 # by Zhili
 
