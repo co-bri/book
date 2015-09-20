@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.5.2" data-basepath="../.." data-revision="Sat Sep 19 2015 20:26:36 GMT-0600 (MDT)">
+    <div class="book" data-level="1.5.2" data-basepath="../.." data-revision="Sun Sep 20 2015 08:49:01 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -701,32 +701,671 @@ put it in the <code>learning/week2</code> folder, and replace <code>![screenshot
 your own image. Please makes sure your screenshot includes the <em>entire</em> Tableau interface
 including the controls, widgets ...etc.</p>
 <h1 id="import">Import</h1>
-<p>Data: <a href="https://github.com/bigdatahci2015/book/blob/master/hackathons/fcq/fcq.clean.json" target="_blank">fcq.clean.json</a></p>
+<p>Data: <a href="https://github.com/bigdatahci2015/book/blob/master/hackathons/fcq/fcq.clean.json" target="_blank">fcq.clean.json</a>
+</p>
 <p>(a copy of this file is in your book repository already in the directory <code>hackathons/fcq</code>)</p>
 <p>This dataset is provided to you in the JSON format. Your first task is to figure out
 how to transform this JSON file into a format that can be fed into Tableau. As
 a junior and senior, you are expected to be able to look around the Internet
 to problem solve.</p>
-<h1 id="-question-1">(Question 1)</h1>
-<p><img src="screenshot.png" alt="screenshot"></p>
-<p>(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)</p>
-<h1 id="-question-2">(Question 2)</h1>
-<p><img src="screenshot.png" alt="screenshot"></p>
-<p>(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)</p>
-<h1 id="-question-3">(Question 3)</h1>
-<p><img src="screenshot.png" alt="screenshot"></p>
-<p>(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)</p>
-<h1 id="-question-4">(Question 4)</h1>
-<p><img src="screenshot.png" alt="screenshot"></p>
-<p>(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)</p>
-<h1 id="-question-5">(Question 5)</h1>
-<p><img src="screenshot.png" alt="screenshot"></p>
-<p>(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)    </p>
+<h1 id="how-many-courses-in-iphy-that-has-4-credits-hours-by-fadhil">How many courses in IPHY that has 4 credits hours ? by Fadhil</h1>
+<p><pre>
+<span class="keyword">var</span> iphy = _.filter(data,<span class="keyword">function</span>(n){
+        <span class="keyword">return</span> n.CrsPBADept == <span class="string">&apos;IPHY&apos;</span>
+})
+<span class="keyword">var</span> fours = _.filter(iphy,<span class="keyword">function</span>(n){
+        <span class="keyword">return</span> n.Hours == <span class="number">4</span>
+})
+<span class="keyword">var</span> fours = fours.length
+
+<span class="keyword">return</span>  fours
+
+
+</pre>
+There are 9 courses in IPHY with 4 credit hours</p>
+<p><img src="IPHYClasses.png" alt="screenshot"></p>
+<p>The graph shows the number of IPHY classes with each amount of credit hours. </p>
+<p>i# Which are the top 5 departments in terms of number of 4000 level classes?</p>
+<h1 id="by-brian">by Brian</h1>
+<p><pre>
+<span class="keyword">var</span> groups = _.groupBy(data,<span class="keyword">function</span>(n){
+        <span class="keyword">return</span> n.Subject
+})
+<span class="keyword">var</span> subject4k = _.mapValues(groups,<span class="keyword">function</span>(n){
+        <span class="keyword">var</span>  classLvl = _.pluck(n,<span class="string">&quot;CrsLvlNum&quot;</span>)
+        classes4k = _.filter(classLvl,<span class="keyword">function</span>(n){
+                <span class="keyword">return</span> n == <span class="string">&quot;4XXX&quot;</span>
+        })
+        <span class="keyword">return</span>  classes4k.length
+})
+<span class="keyword">var</span> sort4k = _.sortBy(subject4k, <span class="keyword">function</span>(n,key){
+        <span class="keyword">return</span> n
+})
+<span class="comment">// Problem is the the sort removed the keys</span>
+<span class="comment">// so use the sort to find the 5th highest vailue</span>
+<span class="comment">// then go back to dictionary and pull the ones that size or larger</span>
+<span class="keyword">var</span> cutoff = sort4k[sort4k.length-<span class="number">5</span>]
+<span class="keyword">var</span> top54k = _.pick(subject4k,<span class="keyword">function</span>(n){
+        <span class="keyword">return</span> n &gt;= cutoff
+})
+<span class="keyword">var</span> result = top54k
+<span class="keyword">return</span> result
+
+
+</pre></p>
+<table>
+
+    <tr>
+        <td>PSYC</td>
+        <td>57</td>
+    </tr>
+
+    <tr>
+        <td>FNCE</td>
+        <td>36</td>
+    </tr>
+
+    <tr>
+        <td>MGMT</td>
+        <td>39</td>
+    </tr>
+
+    <tr>
+        <td>EDUC</td>
+        <td>52</td>
+    </tr>
+
+    <tr>
+        <td>MCEN</td>
+        <td>36</td>
+    </tr>
+
+    <tr>
+        <td>JOUR</td>
+        <td>45</td>
+    </tr>
+
+</table>
+
+<p><img src="4K.png" alt="screenshot">
+There is a tie for the 5th spot so there are six departments with the five highest number of 4000 level classes as shown in the bar chart.</p>
+<p>ch instructors course has the highest enrollment?</p>
+<h1 id="by-zhili">by Zhili</h1>
+<p><pre>
+<span class="keyword">var</span> groups = _.groupBy(data,<span class="keyword">function</span>(n){
+        <span class="keyword">return</span> n.Instructors[<span class="number">0</span>].name
+})
+<span class="keyword">var</span> enrolls = _.pluck(data,<span class="string">&quot;N.ENROLL&quot;</span>)
+<span class="keyword">var</span> biggest = _.max(enrolls)
+<span class="keyword">var</span> bigClass = _.pick(data,_.matchesProperty(<span class="string">&apos;N.ENROLL&apos;</span>,biggest))
+
+<span class="keyword">var</span> prof =  _.pluck(bigClass, <span class="string">&quot;Instructors&quot;</span>)
+<span class="keyword">var</span> prof = _.pluck(prof[<span class="number">0</span>],<span class="string">&apos;name&apos;</span>)
+<span class="keyword">return</span> prof
+
+</pre>
+The instructor of the course with the highest enrollment is GRAVES, PHILIP E</p>
+<p><img src="ClassEnroll.png" alt="screenshot">
+The bar chart shows by Intsructor and class which Instructros class has the highest enrollments.</p>
+<h1 id="what-instructors-has-the-highest-rating-by-andrew">What instructors has the highest rating? By Andrew</h1>
+<p><pre>
+<span class="keyword">var</span> groups = _.groupBy(data,<span class="keyword">function</span>(n){
+        <span class="keyword">return</span> n.Instructors[<span class="number">0</span>].name
+})
+<span class="keyword">var</span> ratings = _.pluck(data,<span class="string">&quot;AvgInstructor&quot;</span>)
+<span class="keyword">var</span> best = _.max(ratings)
+<span class="keyword">var</span> bestProf = _.pick(data,_.matchesProperty(<span class="string">&apos;AvgInstructor&apos;</span>,best))
+
+<span class="keyword">var</span> prof =  _.pluck(bestProf, <span class="string">&quot;Instructors&quot;</span>)
+prof = _.flatten(prof)
+<span class="keyword">var</span> prof = _.pluck(prof,<span class="string">&apos;name&apos;</span>)
+<span class="keyword">return</span> prof
+</pre></p>
+<p>The instructors with the highest rating are</p>
+<table>
+
+    <tr>
+        <td>HOBBS, STEVEN L</td>
+    </tr>
+
+    <tr>
+        <td>MADDEN, MOLLY C</td>
+    </tr>
+
+    <tr>
+        <td>FOLEY, TERESA E.</td>
+    </tr>
+
+    <tr>
+        <td>MADDEN, MOLLY C</td>
+    </tr>
+
+    <tr>
+        <td>LOWRY, CHRISTOPHER</td>
+    </tr>
+
+    <tr>
+        <td>KEARNES, KEITH</td>
+    </tr>
+
+    <tr>
+        <td>HARVEY, PAMELA ANN</td>
+    </tr>
+
+    <tr>
+        <td>MILLS, CLAUDIA</td>
+    </tr>
+
+    <tr>
+        <td>FINKELSTEIN, NOAH D</td>
+    </tr>
+
+    <tr>
+        <td>FITZGERALD, JENNIFER L</td>
+    </tr>
+
+    <tr>
+        <td>FITZGERALD, JENNIFER L</td>
+    </tr>
+
+    <tr>
+        <td>KLINGER, ELIZA G</td>
+    </tr>
+
+    <tr>
+        <td>DOYLE, DAMIAN P</td>
+    </tr>
+
+    <tr>
+        <td>FRUSH, JAMI A</td>
+    </tr>
+
+    <tr>
+        <td>GEORGESON, GAIL ELLEN</td>
+    </tr>
+
+    <tr>
+        <td>GEORGESON, GAIL ELLEN</td>
+    </tr>
+
+    <tr>
+        <td>MICHALS, NILS D</td>
+    </tr>
+
+    <tr>
+        <td>BOYD, KAREN SUE</td>
+    </tr>
+
+    <tr>
+        <td>SHARMA, ANU</td>
+    </tr>
+
+    <tr>
+        <td>SCHICK, BRENDA</td>
+    </tr>
+
+    <tr>
+        <td>SCHINCARIOL, MARCELO TADEU</td>
+    </tr>
+
+    <tr>
+        <td>MARTUSCELLI, TANIA A.</td>
+    </tr>
+
+    <tr>
+        <td>HAESSLER, TAIKO MARIA</td>
+    </tr>
+
+    <tr>
+        <td>PIRAS, MARIA CHRISTINA</td>
+    </tr>
+
+    <tr>
+        <td>BAENA, JULIO</td>
+    </tr>
+
+    <tr>
+        <td>DIACHENKO, NADA</td>
+    </tr>
+
+    <tr>
+        <td>LANE, CONSTANCE IRENE</td>
+    </tr>
+
+    <tr>
+        <td>NICHOLS, LYNN WAYNE</td>
+    </tr>
+
+    <tr>
+        <td>OSNES, MARY BETH</td>
+    </tr>
+
+    <tr>
+        <td>HEKMAN, DAVID R</td>
+    </tr>
+
+    <tr>
+        <td>BENNETT, DOUGLAS P</td>
+    </tr>
+
+    <tr>
+        <td>HEKMAN, DAVID R</td>
+    </tr>
+
+    <tr>
+        <td>DUTRO, ELIZABETH</td>
+    </tr>
+
+    <tr>
+        <td>MCGINLEY, WILLIAM</td>
+    </tr>
+
+    <tr>
+        <td>WILLMANN, KENT D</td>
+    </tr>
+
+    <tr>
+        <td>DUTRO, ELIZABETH</td>
+    </tr>
+
+    <tr>
+        <td>GERREN, DONNA SUE</td>
+    </tr>
+
+    <tr>
+        <td>PALEN, LEYSIA A</td>
+    </tr>
+
+    <tr>
+        <td>DOUGLASS, KATHLEEN MARY</td>
+    </tr>
+
+    <tr>
+        <td>BLOOM, FREDERIC M.</td>
+    </tr>
+
+    <tr>
+        <td>BLOOM, FREDERIC M.</td>
+    </tr>
+
+    <tr>
+        <td>LEONG, DAPHNE</td>
+    </tr>
+
+    <tr>
+        <td>MARTIN, LISA D</td>
+    </tr>
+
+    <tr>
+        <td>SILVER, DANIEL S</td>
+    </tr>
+
+    <tr>
+        <td>STANLEY, WILLIAM J</td>
+    </tr>
+
+    <tr>
+        <td>ECKERT, ERIKA L</td>
+    </tr>
+
+    <tr>
+        <td>NIMS, ABIGAIL ANDREWS</td>
+    </tr>
+
+    <tr>
+        <td>THIEMAN DINO, ANGELA LEA</td>
+    </tr>
+
+    <tr>
+        <td>SCANLAN-LYONS, COLLEEN M.</td>
+    </tr>
+
+    <tr>
+        <td>NAUMAN, ROBERT</td>
+    </tr>
+
+    <tr>
+        <td>CLEMMONS, MELANIE M</td>
+    </tr>
+
+    <tr>
+        <td>RUMLEY, WILLIAM JUDE</td>
+    </tr>
+
+    <tr>
+        <td>YAZZIE, MELANIE A.</td>
+    </tr>
+
+    <tr>
+        <td>KANEYASU, MICHIKO</td>
+    </tr>
+
+    <tr>
+        <td>SPONHEIMER, MATTHEW JAMES</td>
+    </tr>
+
+    <tr>
+        <td>JONES, CARLA MAE</td>
+    </tr>
+
+    <tr>
+        <td>NORRIS, JAN ADAM</td>
+    </tr>
+
+    <tr>
+        <td>GREEN, JAMES C</td>
+    </tr>
+
+    <tr>
+        <td>IRBY, KELLY ANNE</td>
+    </tr>
+
+    <tr>
+        <td>LUNDQUIST, JULIE KAY</td>
+    </tr>
+
+    <tr>
+        <td>KOCH, TAD H</td>
+    </tr>
+
+    <tr>
+        <td>VAIDA, VERONICA</td>
+    </tr>
+
+    <tr>
+        <td>ATNALLY, DIANE L</td>
+    </tr>
+
+    <tr>
+        <td>JAHN, JODY L</td>
+    </tr>
+
+    <tr>
+        <td>BASEY, JOHN M</td>
+    </tr>
+
+    <tr>
+        <td>BASEY, JOHN M</td>
+    </tr>
+
+    <tr>
+        <td>BUSNARDO, RACHEL LYDIA</td>
+    </tr>
+
+    <tr>
+        <td>KOENIG, MONICA HELEN</td>
+    </tr>
+
+    <tr>
+        <td>KLAGES, MARY K</td>
+    </tr>
+
+    <tr>
+        <td>MILLER, DALE LEE</td>
+    </tr>
+
+    <tr>
+        <td>RABAKA, REILAND DEVAUN</td>
+    </tr>
+
+    <tr>
+        <td>APPLEBY, JESSICA JOY</td>
+    </tr>
+
+    <tr>
+        <td>VAN NELSON, LOREDANA ALINA</td>
+    </tr>
+
+    <tr>
+        <td>SAURINI, SUSANNA M.</td>
+    </tr>
+
+    <tr>
+        <td>TORRIANI, CHIARA</td>
+    </tr>
+
+    <tr>
+        <td>HICKCOX, ABBY LYNN</td>
+    </tr>
+
+    <tr>
+        <td>BLACK, SARAH ROSE</td>
+    </tr>
+
+    <tr>
+        <td>RIVLIN, EYAL OFER</td>
+    </tr>
+
+    <tr>
+        <td>GOODMAN, ZILLA JANE</td>
+    </tr>
+
+    <tr>
+        <td>KOSTOGLODOVA, ELENA YURIEVNA</td>
+    </tr>
+
+    <tr>
+        <td>HOBBS, STEVEN L</td>
+    </tr>
+
+    <tr>
+        <td>BUSTAMANTE, HEIDI MARGARITA</td>
+    </tr>
+
+    <tr>
+        <td>HOBBS, STEVEN L</td>
+    </tr>
+
+    <tr>
+        <td>BUSTAMANTE, HEIDI MARGARITA</td>
+    </tr>
+
+    <tr>
+        <td>HOBBS, STEVEN L</td>
+    </tr>
+
+    <tr>
+        <td>BUSTAMANTE, HEIDI MARGARITA</td>
+    </tr>
+
+    <tr>
+        <td>HALL, KIRA</td>
+    </tr>
+
+    <tr>
+        <td>GUILD, NANCY ANN</td>
+    </tr>
+
+    <tr>
+        <td>KLYMKOWSKY, MICHAEL W</td>
+    </tr>
+
+    <tr>
+        <td>KNIGHT, JENNIFER KIRSTEN</td>
+    </tr>
+
+    <tr>
+        <td>MONTON, BRADLEY J</td>
+    </tr>
+
+    <tr>
+        <td>FITZGERALD, JENNIFER L</td>
+    </tr>
+
+    <tr>
+        <td>PARK, BERNADETTE</td>
+    </tr>
+
+    <tr>
+        <td>DOYLE, DAMIAN P</td>
+    </tr>
+
+    <tr>
+        <td>MCBREARTY, ROBERT G</td>
+    </tr>
+
+    <tr>
+        <td>MCBREARTY, ROBERT G</td>
+    </tr>
+
+    <tr>
+        <td>FELDMAN, ANDREA</td>
+    </tr>
+
+    <tr>
+        <td>ENNIS, MICHAEL</td>
+    </tr>
+
+    <tr>
+        <td>MYERS, SETH G</td>
+    </tr>
+
+    <tr>
+        <td>SHARMA, ANU</td>
+    </tr>
+
+    <tr>
+        <td>ROBERTSON, MARY ANNA</td>
+    </tr>
+
+    <tr>
+        <td>VERVEER, ELAINA MARIE</td>
+    </tr>
+
+    <tr>
+        <td>MASON, GESEL R</td>
+    </tr>
+
+    <tr>
+        <td>ROYBAL, SARA M.</td>
+    </tr>
+
+    <tr>
+        <td>TULEY, STEPHANIE ANN</td>
+    </tr>
+
+    <tr>
+        <td>RANDALL, ERIKA ANNE</td>
+    </tr>
+
+    <tr>
+        <td>CRIPE, KERRY M</td>
+    </tr>
+
+    <tr>
+        <td>MORLEY, SUSAN</td>
+    </tr>
+
+    <tr>
+        <td>MUELLER, ERICK MICHAEL</td>
+    </tr>
+
+    <tr>
+        <td>MUELLER, ERICK MICHAEL</td>
+    </tr>
+
+    <tr>
+        <td>ZARSKE, MALINDA SCHAEFER</td>
+    </tr>
+
+    <tr>
+        <td>ANDREW, JULIE ANN</td>
+    </tr>
+
+    <tr>
+        <td>BUNNING, KIMBERLY A</td>
+    </tr>
+
+    <tr>
+        <td>LISTON, DANIEL P</td>
+    </tr>
+
+    <tr>
+        <td>LOPEZ, ENRIQUE J</td>
+    </tr>
+
+    <tr>
+        <td>ANDREW, JULIE ANN</td>
+    </tr>
+
+    <tr>
+        <td>BUNNING, KIMBERLY A</td>
+    </tr>
+
+    <tr>
+        <td>BEGLEY, DONNA M</td>
+    </tr>
+
+    <tr>
+        <td>LANGE, ANJA K.</td>
+    </tr>
+
+    <tr>
+        <td>HOTH, KEVIN J.</td>
+    </tr>
+
+    <tr>
+        <td>MCPHERSON, ADAM MICHAEL</td>
+    </tr>
+
+    <tr>
+        <td>ENGLAND, MARGARET ANN</td>
+    </tr>
+
+    <tr>
+        <td>MCKEE, JEROME CHRISTOPHER</td>
+    </tr>
+
+    <tr>
+        <td>WESSON, MARIANNE</td>
+    </tr>
+
+    <tr>
+        <td>GENTRY, GREGORY R</td>
+    </tr>
+
+    <tr>
+        <td>EWEN, HUNTER P</td>
+    </tr>
+
+    <tr>
+        <td>DRUMHELLER, JOHN E</td>
+    </tr>
+
+    <tr>
+        <td>LEONG, DAPHNE</td>
+    </tr>
+
+    <tr>
+        <td>DONICA, DREW ROBERT</td>
+    </tr>
+
+    <tr>
+        <td>SCHWAB, SCOTT PRESTON</td>
+    </tr>
+
+    <tr>
+        <td>KOREVAAR, DAVID J</td>
+    </tr>
+
+    <tr>
+        <td>STANLEY, WILLIAM J</td>
+    </tr>
+
+    <tr>
+        <td>BAHN, LINA</td>
+    </tr>
+
+    <tr>
+        <td>MASON, PATRICK C</td>
+    </tr>
+
+</table>
+
+<p><img src="ProfRate1.png" alt="screenshot">
+<img src="ProfRate2.png" alt="screenshot">
+This one was difficult as there are many instructors with a top rating of 6. The first chart show graphically the distribution by rating with ratings divided into groups -- 6 then 5.5-5.99, etc in steps of .5 so that you can see the distributions of ratings.
+The bar chart shows a number of names of instructors who have a rataing of six but there was no way to create a chart with all the names that would fit into one screen shot.</p>
 
                     
                     </section>
