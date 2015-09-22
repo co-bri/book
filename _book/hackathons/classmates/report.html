@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Sun Sep 20 2015 08:49:01 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Mon Sep 21 2015 18:16:57 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -698,54 +804,46 @@
 on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
 the following:</p>
 <h1 id="how-many-of-the-students-are-cs-majors">How many of the students are CS majors?</h1>
-<p><pre>
-<span class="keyword">var</span> x = _.filter(data.comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;CS&quot;</span>);
+<p><pre><code>var x = _.filter(data.comments, function(n){
+        return _.includes(n.body,&quot;CS&quot;);
 });
 
-<span class="keyword">var</span> countCS = _.size(x)
-<span class="keyword">var</span> y = _.filter(data.comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Computer Science&quot;</span>);
+var countCS = _.size(x)
+var y = _.filter(data.comments, function(n){
+        return _.includes(n.body,&quot;Computer Science&quot;);
 });
-<span class="keyword">var</span> countComputerScience = _.size(y)
+var countComputerScience = _.size(y)
 
-<span class="keyword">return</span> (countCS + countComputerScience)
-</pre>
+return (countCS + countComputerScience)</code></pre>
 The number of CS majors in the class is 20</p>
 <h1 id="how-many-peoples-names-start-with-a">How many peoples names start with A?</h1>
-<p><pre>
-<span class="keyword">var</span> y = _.filter(data.comments, <span class="keyword">function</span>(n){
-    <span class="keyword">var</span> text = n.body
-    <span class="keyword">var</span> text2 = _.first(text.split(<span class="string">&quot;\r\n&quot;</span>))
-    <span class="keyword">var</span> text3 = _.last(text2.split(<span class="string">&quot;Name:&quot;</span>))
-        <span class="keyword">return</span> text3.charAt(<span class="number">1</span>) == <span class="string">&apos;A&apos;</span>
+<p><pre><code>var y = _.filter(data.comments, function(n){
+	var text = n.body
+	var text2 = _.first(text.split(&quot;\r\n&quot;))
+	var text3 = _.last(text2.split(&quot;Name:&quot;))
+        return text3.charAt(1) == &apos;A&apos;
 });
-<span class="keyword">var</span> z = _.size(y)
-<span class="keyword">return</span> z 
-</pre>
+var z = _.size(y)
+return z</code></pre>
 There are 4 students names start with A</p>
 <h1 id="how-many-of-the-students-are-not-cs-majors">How many of the students are not CS majors?</h1>
-<p><pre>
-<span class="keyword">var</span> x = _.filter(data.comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;CS&quot;</span>);
+<p><pre><code>var x = _.filter(data.comments, function(n){
+        return _.includes(n.body,&quot;CS&quot;);
 });
 
-<span class="keyword">var</span> countCS = _.size(x)
-<span class="keyword">var</span> y = _.filter(data.comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Computer Science&quot;</span>);
+var countCS = _.size(x)
+var y = _.filter(data.comments, function(n){
+        return _.includes(n.body,&quot;Computer Science&quot;);
 });
-<span class="keyword">var</span> countComputerScience = _.size(y)
-<span class="keyword">return</span> (data.comments.length - (countCS + countComputerScience))
-</pre>
+var countComputerScience = _.size(y)
+return (data.comments.length - (countCS + countComputerScience))</code></pre>
 There are 6 students in the class who are not CS majors</p>
 <h1 id="what-is-the-user-id-for-the-login-zhya215">What is the user id for the login zhya215?</h1>
-<p><pre>
-<span class="keyword">var</span> y = _.filter(data.comments, <span class="keyword">function</span>(n){
-        <span class="keyword">return</span> _.includes(n.user,<span class="string">&quot;zhya215&quot;</span>);
+<p><pre><code>var y = _.filter(data.comments, function(n){
+        return _.includes(n.user,&quot;zhya215&quot;);
 });
-z = _.pluck(y,<span class="string">&quot;id&quot;</span>)
-<span class="keyword">return</span> z
-</pre></p>
+z = _.pluck(y,&quot;id&quot;)
+return z</code></pre></p>
 <p>The user with id zhya215 is 134036701</p>
 
                     
@@ -767,6 +865,14 @@ z = _.pluck(y,<span class="string">&quot;id&quot;</span>)
 
         
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
+    
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>

@@ -112,7 +112,9 @@ return bigDept
 
 {% endlodash %}
 The department with the biggest enrollment is {{result}}
-t instructors has the highest rating? By Andrew
+
+
+# Which instructors have the highest rating? By Andrew
 
 {% lodash %}
 var groups = _.groupBy(data,function(n){

@@ -44,7 +44,7 @@ There are {{result}} courses in IPHY with 4 credit hours
 
 The graph shows the number of IPHY classes with each amount of credit hours. 
 
-i# Which are the top 5 departments in terms of number of 4000 level classes?
+# Which are the top 5 departments in terms of number of 4000 level classes?
 # by Brian
 
 {% lodash %}
@@ -86,7 +86,7 @@ return result
 There is a tie for the 5th spot so there are six departments with the five highest number of 4000 level classes as shown in the bar chart.
 
 
-ch instructors course has the highest enrollment?
+# Which instructors course has the highest enrollment?
 # by Zhili
 
 {% lodash %}
@@ -107,7 +107,30 @@ The instructor of the course with the highest enrollment is {{result}}
 ![screenshot](ClassEnroll.png)
 The bar chart shows by Intsructor and class which Instructros class has the highest enrollments.
 
-#  What instructors has the highest rating? By Andrew
+#  Which department has the highest enrollment? By Tristan
+
+{% lodash %}
+
+var groups = _.groupBy(data,function(n){
+        return n.Subject
+})
+var enrollments = _.mapValues(groups,function(n){
+        var enrollArray = _.pluck(n,'N.ENROLL')
+        var sum = _.sum(enrollArray)
+        return sum
+})
+var numbers = _.max(enrollments)
+var bigDept = _.findKey(enrollments,function(n){
+        return n >= numbers
+})
+return bigDept
+
+{% endlodash %}
+The department with the biggest enrollment is {{result}}
+
+![screenshot](SubjectEnroll.png)
+
+#  What instructors have the highest rating? By Andrew
 
 {% lodash %}
 var groups = _.groupBy(data,function(n){

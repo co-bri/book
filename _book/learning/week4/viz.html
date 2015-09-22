@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -37,7 +41,7 @@
         
     
     
-    <link rel="next" href="../../hackathons/index.html" />
+    <link rel="next" href="../../learning/week5/index.html" />
     
     
     <link rel="prev" href="../../learning/week4/report.html" />
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.5.2" data-basepath="../.." data-revision="Sun Sep 20 2015 08:49:01 GMT-0600 (MDT)">
+    <div class="book" data-level="1.5.2" data-basepath="../.." data-revision="Mon Sep 21 2015 18:16:57 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -709,50 +815,42 @@ how to transform this JSON file into a format that can be fed into Tableau. As
 a junior and senior, you are expected to be able to look around the Internet
 to problem solve.</p>
 <h1 id="how-many-courses-in-iphy-that-has-4-credits-hours-by-fadhil">How many courses in IPHY that has 4 credits hours ? by Fadhil</h1>
-<p><pre>
-<span class="keyword">var</span> iphy = _.filter(data,<span class="keyword">function</span>(n){
-        <span class="keyword">return</span> n.CrsPBADept == <span class="string">&apos;IPHY&apos;</span>
+<p><pre><code>var iphy = _.filter(data,function(n){
+        return n.CrsPBADept == &apos;IPHY&apos;
 })
-<span class="keyword">var</span> fours = _.filter(iphy,<span class="keyword">function</span>(n){
-        <span class="keyword">return</span> n.Hours == <span class="number">4</span>
+var fours = _.filter(iphy,function(n){
+        return n.Hours == 4
 })
-<span class="keyword">var</span> fours = fours.length
+var fours = fours.length
 
-<span class="keyword">return</span>  fours
-
-
-</pre>
+return  fours</code></pre>
 There are 9 courses in IPHY with 4 credit hours</p>
 <p><img src="IPHYClasses.png" alt="screenshot"></p>
 <p>The graph shows the number of IPHY classes with each amount of credit hours. </p>
-<p>i# Which are the top 5 departments in terms of number of 4000 level classes?</p>
+<h1 id="which-are-the-top-5-departments-in-terms-of-number-of-4000-level-classes">Which are the top 5 departments in terms of number of 4000 level classes?</h1>
 <h1 id="by-brian">by Brian</h1>
-<p><pre>
-<span class="keyword">var</span> groups = _.groupBy(data,<span class="keyword">function</span>(n){
-        <span class="keyword">return</span> n.Subject
+<p><pre><code>var groups = _.groupBy(data,function(n){
+        return n.Subject
 })
-<span class="keyword">var</span> subject4k = _.mapValues(groups,<span class="keyword">function</span>(n){
-        <span class="keyword">var</span>  classLvl = _.pluck(n,<span class="string">&quot;CrsLvlNum&quot;</span>)
-        classes4k = _.filter(classLvl,<span class="keyword">function</span>(n){
-                <span class="keyword">return</span> n == <span class="string">&quot;4XXX&quot;</span>
+var subject4k = _.mapValues(groups,function(n){
+        var  classLvl = _.pluck(n,&quot;CrsLvlNum&quot;)
+        classes4k = _.filter(classLvl,function(n){
+                return n == &quot;4XXX&quot;
         })
-        <span class="keyword">return</span>  classes4k.length
+        return  classes4k.length
 })
-<span class="keyword">var</span> sort4k = _.sortBy(subject4k, <span class="keyword">function</span>(n,key){
-        <span class="keyword">return</span> n
+var sort4k = _.sortBy(subject4k, function(n,key){
+        return n
 })
-<span class="comment">// Problem is the the sort removed the keys</span>
-<span class="comment">// so use the sort to find the 5th highest vailue</span>
-<span class="comment">// then go back to dictionary and pull the ones that size or larger</span>
-<span class="keyword">var</span> cutoff = sort4k[sort4k.length-<span class="number">5</span>]
-<span class="keyword">var</span> top54k = _.pick(subject4k,<span class="keyword">function</span>(n){
-        <span class="keyword">return</span> n &gt;= cutoff
+// Problem is the the sort removed the keys
+// so use the sort to find the 5th highest vailue
+// then go back to dictionary and pull the ones that size or larger
+var cutoff = sort4k[sort4k.length-5]
+var top54k = _.pick(subject4k,function(n){
+        return n &gt;= cutoff
 })
-<span class="keyword">var</span> result = top54k
-<span class="keyword">return</span> result
-
-
-</pre></p>
+var result = top54k
+return result</code></pre></p>
 <table>
 
     <tr>
@@ -789,38 +887,49 @@ There are 9 courses in IPHY with 4 credit hours</p>
 
 <p><img src="4K.png" alt="screenshot">
 There is a tie for the 5th spot so there are six departments with the five highest number of 4000 level classes as shown in the bar chart.</p>
-<p>ch instructors course has the highest enrollment?</p>
+<h1 id="which-instructors-course-has-the-highest-enrollment">Which instructors course has the highest enrollment?</h1>
 <h1 id="by-zhili">by Zhili</h1>
-<p><pre>
-<span class="keyword">var</span> groups = _.groupBy(data,<span class="keyword">function</span>(n){
-        <span class="keyword">return</span> n.Instructors[<span class="number">0</span>].name
+<p><pre><code>var groups = _.groupBy(data,function(n){
+        return n.Instructors[0].name
 })
-<span class="keyword">var</span> enrolls = _.pluck(data,<span class="string">&quot;N.ENROLL&quot;</span>)
-<span class="keyword">var</span> biggest = _.max(enrolls)
-<span class="keyword">var</span> bigClass = _.pick(data,_.matchesProperty(<span class="string">&apos;N.ENROLL&apos;</span>,biggest))
+var enrolls = _.pluck(data,&quot;N.ENROLL&quot;)
+var biggest = _.max(enrolls)
+var bigClass = _.pick(data,_.matchesProperty(&apos;N.ENROLL&apos;,biggest))
 
-<span class="keyword">var</span> prof =  _.pluck(bigClass, <span class="string">&quot;Instructors&quot;</span>)
-<span class="keyword">var</span> prof = _.pluck(prof[<span class="number">0</span>],<span class="string">&apos;name&apos;</span>)
-<span class="keyword">return</span> prof
-
-</pre>
+var prof =  _.pluck(bigClass, &quot;Instructors&quot;)
+var prof = _.pluck(prof[0],&apos;name&apos;)
+return prof</code></pre>
 The instructor of the course with the highest enrollment is GRAVES, PHILIP E</p>
 <p><img src="ClassEnroll.png" alt="screenshot">
 The bar chart shows by Intsructor and class which Instructros class has the highest enrollments.</p>
-<h1 id="what-instructors-has-the-highest-rating-by-andrew">What instructors has the highest rating? By Andrew</h1>
-<p><pre>
-<span class="keyword">var</span> groups = _.groupBy(data,<span class="keyword">function</span>(n){
-        <span class="keyword">return</span> n.Instructors[<span class="number">0</span>].name
+<h1 id="which-department-has-the-highest-enrollment-by-tristan">Which department has the highest enrollment? By Tristan</h1>
+<p><pre><code>var groups = _.groupBy(data,function(n){
+        return n.Subject
 })
-<span class="keyword">var</span> ratings = _.pluck(data,<span class="string">&quot;AvgInstructor&quot;</span>)
-<span class="keyword">var</span> best = _.max(ratings)
-<span class="keyword">var</span> bestProf = _.pick(data,_.matchesProperty(<span class="string">&apos;AvgInstructor&apos;</span>,best))
+var enrollments = _.mapValues(groups,function(n){
+        var enrollArray = _.pluck(n,&apos;N.ENROLL&apos;)
+        var sum = _.sum(enrollArray)
+        return sum
+})
+var numbers = _.max(enrollments)
+var bigDept = _.findKey(enrollments,function(n){
+        return n &gt;= numbers
+})
+return bigDept</code></pre>
+The department with the biggest enrollment is MATH</p>
+<p><img src="SubjectEnroll.png" alt="screenshot"></p>
+<h1 id="what-instructors-have-the-highest-rating-by-andrew">What instructors have the highest rating? By Andrew</h1>
+<p><pre><code>var groups = _.groupBy(data,function(n){
+        return n.Instructors[0].name
+})
+var ratings = _.pluck(data,&quot;AvgInstructor&quot;)
+var best = _.max(ratings)
+var bestProf = _.pick(data,_.matchesProperty(&apos;AvgInstructor&apos;,best))
 
-<span class="keyword">var</span> prof =  _.pluck(bestProf, <span class="string">&quot;Instructors&quot;</span>)
+var prof =  _.pluck(bestProf, &quot;Instructors&quot;)
 prof = _.flatten(prof)
-<span class="keyword">var</span> prof = _.pluck(prof,<span class="string">&apos;name&apos;</span>)
-<span class="keyword">return</span> prof
-</pre></p>
+var prof = _.pluck(prof,&apos;name&apos;)
+return prof</code></pre></p>
 <p>The instructors with the highest rating are</p>
 <table>
 
@@ -1379,13 +1488,21 @@ The bar chart shows a number of names of instructors who have a rataing of six b
         <a href="../../learning/week4/report.html" class="navigation navigation-prev " aria-label="Previous page: FCQ Report"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/index.html" class="navigation navigation-next " aria-label="Next page: Hackathons"><i class="fa fa-angle-right"></i></a>
+        <a href="../../learning/week5/index.html" class="navigation navigation-next " aria-label="Next page: Week 5"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
+    
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>

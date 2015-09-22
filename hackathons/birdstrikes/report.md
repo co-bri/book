@@ -14,36 +14,29 @@ This report is prepared by
 
 # (Question 1)
 
-This question was asked by (student's github id).
+WHich airport has the most bird hits?
 
-![screenshot](screenshot.png)
+![screenshot](1.png)
 
-(write your explanation for the reader as to where to look at this chart in order
+
+# Which aircraft tyope had the most bird hits? 
+
+
+![screenshot](2.png)
+
     to see the answer)
 
-# (Question 2)
+#  Which species causes the most bird hits?
 
 This question was asked by (student's github id).
 
-![screenshot](screenshot.png)
+![screenshot](3.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
 
-# (Question 3)
+# What is the geo distribution of bird strikes?
 
-This question was asked by (student's github id).
 
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 4)
-
-This question was asked by (student's github id).
-
-![screenshot](screenshot.png)
+![screenshot](4.png)
 
 (write your explanation for the reader as to where to look at this chart in order
     to see the answer)
