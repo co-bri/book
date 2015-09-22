@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Sun Sep 20 2015 08:49:01 GMT-0600 (MDT)">
+    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Mon Sep 21 2015 18:16:57 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -697,59 +803,48 @@
 <p>After completing the warmup exercises, your task is to do four more slightly
 more challenges analyses.</p>
 <h2 id="how-many-students-like-sushi-as-their-favorite-food">How many students like sushi as their favorite food?</h2>
-<p><pre>
-
-<span class="keyword">var</span> x = _.filter(data.comments, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Sushi&quot;</span>);
+<p><pre><code>var x = _.filter(data.comments, function(n){
+	return _.includes(n.body,&quot;Sushi&quot;);
 }); 
-<span class="keyword">return</span> _.size(x)
-</pre></p>
+return _.size(x)</code></pre></p>
 <p>The answer is 5.</p>
 <h2 id="who-are-the-students-liking-python-the-most">Who are the students liking Python the most?</h2>
-<p><pre>
-<span class="keyword">var</span> x = _.filter(data.comments, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Python&quot;</span>);
+<p><pre><code>var x = _.filter(data.comments, function(n){
+	return _.includes(n.body,&quot;Python&quot;);
 });
-<span class="keyword">var</span> y = _.pluck(x,<span class="string">&quot;body&quot;</span>)
-<span class="keyword">var</span> z = _.map(y, <span class="keyword">function</span>(name){
-    <span class="keyword">var</span> a = name.split(<span class="string">&quot;\r\n&quot;</span>)[<span class="number">0</span>]	
-    <span class="keyword">return</span> _.last(a.split(<span class="string">&quot;Name:&quot;</span>))
+var y = _.pluck(x,&quot;body&quot;)
+var z = _.map(y, function(name){
+	var a = name.split(&quot;\r\n&quot;)[0]	
+	return _.last(a.split(&quot;Name:&quot;))
 });
-<span class="keyword">return</span> z
+return z
 
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
-</pre></p>
+return &quot;[answer]&quot;</code></pre></p>
 <p>Their names are  William Farmer, Heather Witte, Zach Lamb, Zhili Yang, John Cronk, Denis Kazakov, Caleb Hsu, Karen Blakemore, Sanketh S Shetty, Andrey Shprengel.</p>
 <h2 id="are-there-more-javascript-lovers-or-java-lovers">Are there more Javascript lovers or Java lovers?</h2>
-<p><pre>
-<span class="keyword">var</span> JSLover = _.filter(data.comments, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Javascipt&quot;</span>);
+<p><pre><code>var JSLover = _.filter(data.comments, function(n){
+	return _.includes(n.body,&quot;Javascipt&quot;);
 }); 
-<span class="keyword">var</span> JLover = _.filter(data.comments, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Java&quot;</span>);
+var JLover = _.filter(data.comments, function(n){
+	return _.includes(n.body,&quot;Java&quot;);
 }); 
 
-<span class="keyword">if</span> (_.size(JSLover) &gt; _.size(JLover)){
-    <span class="keyword">return</span> <span class="string">&quot;Javascript&quot;</span>
-} <span class="keyword">else</span> {
-    <span class="keyword">return</span> <span class="string">&quot;Java&quot;</span>
-}
-
-</pre></p>
+if (_.size(JSLover) &gt; _.size(JLover)){
+	return &quot;Javascript&quot;
+} else {
+	return &quot;Java&quot;
+}</code></pre></p>
 <p>The answer is Java.</p>
 <h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as <code>kjblakemore</code>?</h2>
-<p><pre>
-<span class="keyword">var</span> x = _.filter(data.comments, <span class="keyword">function</span>(n){
-    <span class="keyword">return</span> _.includes(n.body,<span class="string">&quot;Vegan&quot;</span>);
+<p><pre><code>var x = _.filter(data.comments, function(n){
+	return _.includes(n.body,&quot;Vegan&quot;);
 });
-<span class="keyword">var</span> y = _.pluck(x,<span class="string">&quot;body&quot;</span>)
-<span class="keyword">var</span> z = _.map(y, <span class="keyword">function</span>(name){
-    <span class="keyword">var</span> a = name.split(<span class="string">&quot;\r\n&quot;</span>)[<span class="number">0</span>]	
-    <span class="keyword">return</span> _.last(a.split(<span class="string">&quot;Name:&quot;</span>))
+var y = _.pluck(x,&quot;body&quot;)
+var z = _.map(y, function(name){
+	var a = name.split(&quot;\r\n&quot;)[0]	
+	return _.last(a.split(&quot;Name:&quot;))
 });
-<span class="keyword">return</span> z
- 
-</pre></p>
+return z</code></pre></p>
 <p>Their names are  Karen Blakemore.</p>
 
                     
@@ -771,6 +866,14 @@ more challenges analyses.</p>
 
         
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
+    
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>

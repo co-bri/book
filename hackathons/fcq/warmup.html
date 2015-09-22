@@ -29,6 +29,10 @@
         
     
         
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +52,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Sun Sep 20 2015 08:49:01 GMT-0600 (MDT)">
+    <div class="book" data-level="2.3.1" data-basepath="../.." data-revision="Mon Sep 21 2015 18:16:57 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -379,6 +383,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +653,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -697,39 +803,32 @@
 <h1 id="warmup">Warmup</h1>
 <p>Next, complete the following warmup exercises as a team.</p>
 <h2 id="how-many-unique-subject-codes">How many unique subject codes?</h2>
-<p><pre>
-<span class="keyword">var</span> codes = _.pluck(data,<span class="string">&quot;Subject&quot;</span>)
-<span class="keyword">var</span> ucodes = _.uniq(codes)
-<span class="keyword">return</span> ucodes.length
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="comment">//return 113</span>
-</pre></p>
+<p><pre><code>var codes = _.pluck(data,&quot;Subject&quot;)
+var ucodes = _.uniq(codes)
+return ucodes.length
+// TODO: replace with code that computes the actual result
+//return 113</code></pre></p>
 <p>They are 113 unique subject codes.</p>
 <h2 id="how-many-computer-science-csci-courses">How many computer science (CSCI) courses?</h2>
-<p><pre>
-
-<span class="keyword">var</span> cs = _.pluck(data,<span class="string">&quot;Subject&quot;</span>)
-<span class="keyword">var</span> cs2 = _.filter(cs,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n == <span class="string">&quot;CSCI&quot;</span>
+<p><pre><code>var cs = _.pluck(data,&quot;Subject&quot;)
+var cs2 = _.filter(cs,function(n){
+	return n == &quot;CSCI&quot;
 })
-<span class="keyword">return</span> cs2.length
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="comment">//return 63</span>
-</pre></p>
+return cs2.length
+// TODO: replace with code that computes the actual result
+//return 63</code></pre></p>
 <p>They are 63 computer science courses.</p>
 <h2 id="what-is-the-distribution-of-the-courses-across-subject-codes">What is the distribution of the courses across subject codes?</h2>
-<p><pre>
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="keyword">var</span> groups = _.groupBy(data,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.Subject 
+<p><pre><code>// TODO: replace with code that computes the actual result
+var groups = _.groupBy(data,function(n){
+	return n.Subject 
 })
-<span class="keyword">var</span> result = _.mapValues(groups,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.length
+var result = _.mapValues(groups,function(n){
+	return n.length
 })
-<span class="keyword">return</span> result
+return result
 
-<span class="keyword">return</span> {<span class="string">&quot;HIST&quot;</span>: <span class="number">78</span>,<span class="string">&quot;HONR&quot;</span>: <span class="number">20</span>,<span class="string">&quot;HUMN&quot;</span>: <span class="number">17</span>,<span class="string">&quot;IAFS&quot;</span>: <span class="number">20</span>,<span class="string">&quot;IPHY&quot;</span>: <span class="number">134</span>}
-</pre></p>
+return {&quot;HIST&quot;: 78,&quot;HONR&quot;: 20,&quot;HUMN&quot;: 17,&quot;IAFS&quot;: 20,&quot;IPHY&quot;: 134}</code></pre></p>
 <table>
 
     <tr>
@@ -1300,31 +1399,29 @@
 </table>
 
 <h2 id="what-subset-of-these-subject-codes-have-more-than-100-courses">What subset of these subject codes have more than 100 courses?</h2>
-<p><pre>
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="comment">//var grps = _.groupBy(data, &apos;Subject&apos;)</span>
-<span class="comment">//var ret = _.pick(_.mapValues(grps, function(d){</span>
-<span class="comment">//    return d.length</span>
-<span class="comment">//}), function(x){</span>
-<span class="comment">//    return x &gt; 100</span>
-<span class="comment">//})</span>
-<span class="comment">//return ret</span>
+<p><pre><code>// TODO: replace with code that computes the actual result
+//var grps = _.groupBy(data, &apos;Subject&apos;)
+//var ret = _.pick(_.mapValues(grps, function(d){
+//    return d.length
+//}), function(x){
+//    return x &gt; 100
+//})
+//return ret
 
-<span class="keyword">var</span> groups = _.groupBy(data,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.Subject 
+var groups = _.groupBy(data,function(n){
+	return n.Subject 
 })
-<span class="keyword">var</span> counts = _.mapValues(groups,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.length
+var counts = _.mapValues(groups,function(n){
+	return n.length
 })
 
-<span class="keyword">var</span> result = _.pick(counts,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span>	n &gt; <span class="number">100</span>
+var result = _.pick(counts,function(n){
+	return	n &gt; 100
 }) 
-<span class="keyword">return</span> result
+return result
 
 
-<span class="comment">//return {&quot;IPHY&quot;: 134,&quot;MATH&quot;: 232,&quot;MCDB&quot;: 117,&quot;PHIL&quot;: 160,&quot;PSCI&quot;: 117}</span>
-</pre></p>
+//return {&quot;IPHY&quot;: 134,&quot;MATH&quot;: 232,&quot;MCDB&quot;: 117,&quot;PHIL&quot;: 160,&quot;PSCI&quot;: 117}</code></pre></p>
 <table>
 
     <tr>
@@ -1400,35 +1497,33 @@
 </table>
 
 <h2 id="what-subset-of-these-subject-codes-have-more-than-5000-total-enrollments">What subset of these subject codes have more than 5000 total enrollments?</h2>
-<p><pre>
-<span class="keyword">var</span> groups = _.groupBy(data,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.Subject 
+<p><pre><code>var groups = _.groupBy(data,function(n){
+	return n.Subject 
 })
-<span class="keyword">var</span> counts = _.mapValues(groups,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n.length
+var counts = _.mapValues(groups,function(n){
+	return n.length
 })
 
-<span class="keyword">var</span> subjects = _.pick(counts,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span>	n &gt; <span class="number">100</span>
+var subjects = _.pick(counts,function(n){
+	return	n &gt; 100
 }) 
-<span class="keyword">var</span> <span class="keyword">list</span> = _.keys(subjects)
+var list = _.keys(subjects)
 
-groups = _.pick(groups,<span class="keyword">function</span>(n,key){
-    <span class="keyword">return</span> _.includes(<span class="keyword">list</span>,key)
+groups = _.pick(groups,function(n,key){
+	return _.includes(list,key)
 })
-<span class="keyword">var</span> enrolls = _.mapValues(groups,<span class="keyword">function</span>(n){
-    sum = _.sum(n,<span class="string">&quot;N.ENROLL&quot;</span>)
-    <span class="keyword">return</span> sum
+var enrolls = _.mapValues(groups,function(n){
+	sum = _.sum(n,&quot;N.ENROLL&quot;)
+	return sum
 }) 
 console.log(enrolls)
 
-<span class="keyword">var</span> result = _.pick(enrolls,<span class="keyword">function</span>(n){
-    <span class="keyword">return</span> n &gt; <span class="number">5000</span>
+var result = _.pick(enrolls,function(n){
+	return n &gt; 5000
 })
-<span class="keyword">return</span> result
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="comment">//return {&quot;IPHY&quot;: 5507,&quot;MATH&quot;: 8725,&quot;PHIL&quot;: 5672,&quot;PHYS&quot;: 8099,&quot;PSCI&quot;: 5491}</span>
-</pre><div class="console">console&gt; {
+return result
+// TODO: replace with code that computes the actual result
+//return {&quot;IPHY&quot;: 5507,&quot;MATH&quot;: 8725,&quot;PHIL&quot;: 5672,&quot;PHYS&quot;: 8099,&quot;PSCI&quot;: 5491}</code></pre><div class="console">console&gt; {
  &quot;IPHY&quot;: 5507,
  &quot;MATH&quot;: 8725,
  &quot;MCDB&quot;: 4145,
@@ -1490,21 +1585,19 @@ console.log(enrolls)
 </table>
 
 <h2 id="what-are-the-course-numbers-of-the-courses-tom-pei-hsiu-yeh-taught">What are the course numbers of the courses Tom (PEI HSIU) Yeh taught?</h2>
-<p><pre>
-<span class="keyword">var</span> classWithTom = _.filter(data,<span class="keyword">function</span>(n){
-    <span class="keyword">var</span> profs = n.Instructors
-    found = _.find(profs,<span class="keyword">function</span>(m){
-        <span class="keyword">return</span> _.includes(m.name,<span class="string">&quot;YEH, PEI HSIU&quot;</span>)
-    })
-    <span class="keyword">return</span> found
+<p><pre><code>var classWithTom = _.filter(data,function(n){
+	var profs = n.Instructors
+	found = _.find(profs,function(m){
+		return _.includes(m.name,&quot;YEH, PEI HSIU&quot;)
+	})
+	return found
 })
 
 
-<span class="keyword">return</span> _.pluck(classWithTom,<span class="string">&quot;Course&quot;</span>)
+return _.pluck(classWithTom,&quot;Course&quot;)
 
-<span class="comment">// TODO: replace with code that computes the actual result</span>
-<span class="comment">//return [&apos;4830&apos;,&apos;4830&apos;]</span>
-</pre></p>
+// TODO: replace with code that computes the actual result
+//return [&apos;4830&apos;,&apos;4830&apos;]</code></pre></p>
 <p>They are 4830,4830.</p>
 
                     
@@ -1526,6 +1619,14 @@ console.log(enrolls)
 
         
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
+    
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
