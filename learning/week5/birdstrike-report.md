@@ -1,4 +1,4 @@
-{% data src="birdstrike.json" %}
+{% data src="../../hackathons/birdstrikes/b3.json" %}
 {% enddata %}
 
 # Report
@@ -14,31 +14,111 @@ This time, the data is not already prepared for you in a nice JSON format. You
 will need to do it on your own, replacing the placeholder `birdstrike.json` with
 real data.
 
-# (Question 1) by (Name)
-
+# (Question 1) by Brian McKean (co-bri)
+# Which airport has the most bird hits? by zhya215
 {% lodash %}
-return "[answer]"
+names = _.filter(data,function(n){
+        return n["Airport: Name"] != "UNKNOWN"
+})
+airports = _.groupBy(names,function(n){
+        return n["Airport: Name"]
+})
+var incidents  = _.mapValues(airports,function(n){
+        return  n.length
+})
+big = _.max(incidents)
+most = _.pick(incidents,function(n){
+        return n == big
+})
+return most
+
+{% endlodash %}
+{% for key, value in result %}
+        The worse airport is {{key}} with {{value}} incidents
+{% endfor %}
+
+
+# (Question 2) by Karen Blakemore kjblakemore 
+# What airports have the most expensive average accident? (satchelspencer)
+{% lodash %}
+names = _.filter(data,function(n){
+        return n["Airport: Name"] != "UNKNOWN"
+})
+airports = _.groupBy(names,function(n){
+        return n["Airport: Name"]
+})
+
+var avgcost  = _.mapValues(airports,function(n){
+        var number =  n.length
+	var costs = _.pluck(n,"Cost: Total $")
+	cost2 = _.map(costs, _.parseInt);
+	var totalCost = _.sum(cost2)
+	return (totalCost/number)
+})
+
+big = _.max(avgcost)
+most = _.pick(avgcost,function(n){
+        return n == big
+})
+return most
 {% endlodash %}
 
+{% for key, value in result %}
+        The worse airport with the highest average cost is {{key}} with ${{value}} 
+{% endfor %}
 
-# (Question 2) by (Name)
-
-{% lodash %}
-return "[answer]"
-{% endlodash %}
-
-
-# (Question 3) by (Name)
+# (Question 3) by Ming Liew 
+# Which airline have to incur most repair cost due to damage ? ( sumi6109)
 
 {% lodash %}
-return "[answer]"
+airlines = _.groupBy(names,function(n){
+        return n["Aircraft: Airline/Operator"]
+})
+
+var cost  = _.mapValues(airlines,function(n){
+        var costs = _.pluck(n,"Cost: Total $")
+        cost2 = _.map(costs, _.parseInt);
+        var totalCost = _.sum(cost2)
+        return totalCost
+})
+
+big = _.max(cost)
+maxairline = _.pick(cost,function(n){
+        return n == big
+})
+return maxairline
 {% endlodash %}
 
-# (Question 4) by (Name)
+{% for key, value in result %}
+        The airline with the highest amount of damage is {{key}} with ${{value}} in damage
+{% endfor %}
+# (Question 4) by Matt Schroeder 
+# Which plane model strikes the most birds? (twagar95)
 
 {% lodash %}
-return "[answer]"
+
+names = _.filter(data,function(n){
+        return n["Aircraft: Make/Model"] != "UNKNOWN"
+})
+
+planes = _.groupBy(names,function(n){
+        return n["Aircraft: Make/Model"]
+})
+var incidents  = _.mapValues(planes,function(n){
+        return  n.length
+})
+big = _.max(incidents)
+most = _.pick(incidents,function(n){
+        return n == big
+})
+return most
+
 {% endlodash %}
+{% for key, value in result %}
+        The worse plane model is {{key}} with {{value}} incidents
+{% endfor %}
+
+
 
 # (Question 5) by (Name)
 
