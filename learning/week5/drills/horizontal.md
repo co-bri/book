@@ -12,26 +12,38 @@ Display bars horizontally
  {name: 'Indonesia', pop: 252812243}]
 
 {% solution %}
+function computeY(d, i) {
+    return i * 20
+}
+
+function computeWidth(d, i) {
+	c = _.find(data,function(n){
+		return n['name'] == 'China'	
+	})	
+	cp = c['pop']
+	pop = d.pop
+	h = 300 * pop/cp
+ 	return h 
+}
 
 function computeX(d, i) {
-    return 0
+	startX = 0
+	return startX
+}
+
+function computeColor(d, i) {
+	color = 'red'
+	if (_.includes(d,'USA')){
+		color = 'red'
+	}
+	return color
+
 }
 
 function computeHeight(d, i) {
     return 20
 }
 
-function computeWidth(d, i) {
-    return 20 * i + 100
-}
-
-function computeY(d, i) {
-    return 20 * i
-}
-
-function computeColor(d, i) {
-    return 'red'
-}
 
 var viz = _.map(data, function(d, i){
             return {

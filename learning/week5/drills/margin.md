@@ -12,21 +12,32 @@ Add some margins between every two bars
  {name: 'Indonesia', pop: 252812243}]
 
 {% solution %}
-
 function computeX(d, i) {
-    return i * 20
+    return (i * 30) 
 }
 
 function computeHeight(d, i) {
-    return i * 20 + 100
+	c = _.find(data,function(n){
+		return n['name'] == 'China'	
+	})	
+	cp = c['pop']
+	pop = d.pop
+	h = 400 * pop/cp
+ 	return h 
 }
 
 function computeY(d, i) {
-    return 400 - i * 20 - 100
+	startY = 400 - computeHeight(d, i)
+	return startY
 }
 
 function computeColor(d, i) {
-    return 'red'
+	color = 'red'
+	if (_.includes(d,'USA')){
+		color = 'red'
+	}
+	return color
+
 }
 
 var viz = _.map(data, function(d, i){

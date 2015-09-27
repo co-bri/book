@@ -12,29 +12,42 @@ Display a number next to each bar
  {name: 'Indonesia', pop: 252812243}]
 
 {% solution %}
+function computeY(d, i) {
+    return i * 20
+}
+
+function computeWidth(d, i) {
+	c = _.find(data,function(n){
+		return n['name'] == 'China'	
+	})	
+	cp = c['pop']
+	pop = d.pop
+	h = 300 * pop/cp
+ 	return h 
+}
 
 function computeX(d, i) {
-    return 0
+	startX = 0
+	return startX
+}
+
+function computeColor(d, i) {
+	color = 'red'
+	if (_.includes(d,'USA')){
+		color = 'red'
+	}
+	return color
+
 }
 
 function computeHeight(d, i) {
     return 20
 }
 
-function computeWidth(d, i) {
-    return 20 * i + 100
-}
-
-function computeY(d, i) {
-    return 20 * i
-}
-
-function computeColor(d, i) {
-    return 'red'
-}
 
 function computeLabel(d, i) {
-    return 'label'
+	pop = d['pop']
+    return pop
 }
 
 var viz = _.map(data, function(d, i){
@@ -63,7 +76,7 @@ return result.join('\n')
      style="fill:${d.color};
             stroke-width:3;
             stroke:rgb(0,0,0)" />
-<text x="100" y="10">${d.label}</text>
+<text x="330" y="10">${d.label}</text>
 </g>
 
 {% output %}

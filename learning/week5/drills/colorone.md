@@ -17,16 +17,31 @@ function computeX(d, i) {
     return i * 20
 }
 
+function computeY(d, i) {
+    return 0
+}
 function computeHeight(d, i) {
-    return i * 20 + 20 // TODO
+	c = _.find(data,function(n){
+		return n['name'] == 'China'	
+	})	
+	cp = c['pop']
+	pop = d.pop
+	h = 400 * pop/cp
+ 	return h 
 }
 
 function computeColor(d, i) {
-    return 'red' // TODO
+	color = 'red'
+	if (_.includes(d,'USA')){
+		color = 'blue'
+	}
+	return color
+
 }
 
 var viz = _.map(data, function(d, i){
             return {
+		y: computeY(d, i),
                 x: computeX(d, i),
                 height: computeHeight(d, i),
                 color: computeColor(d, i)

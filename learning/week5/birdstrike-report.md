@@ -1,4 +1,4 @@
-{% data src="../../hackathons/birdstrikes/b3.json" %}
+{% data src="/Users/brian/bmckean/birdstrikes/b3.json" %}
 {% enddata %}
 
 # Report

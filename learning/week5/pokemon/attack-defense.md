@@ -80,12 +80,23 @@ Compare attack and defense points side by side
 {% solution %}
 
 function computeX(d, i) {
-    return 0
+    return 104 - d['Attack']
 }
 
 function computeWidth(d, i) {
-    return i * 10 + 10
+    w = d['Attack']
+    return w
 }
+
+function computeDX(d, i) {
+    return 104 
+}
+
+function computeDWidth(d, i) {
+    w = d['Defense']
+    return w
+}
+
 
 function computeY(d, i) {
     return i * 20
@@ -95,12 +106,25 @@ function computeColor(d, i) {
     return 'red'
 }
 
+function computeDColor(d, i) {
+    return 'blue'
+}
+
+function computeLabel(d, i) {
+        x = d['Name']
+    return x
+}
+
 var viz = _.map(data, function(d, i){
             return {
                 x: computeX(d, i),
                 y: computeY(d, i),
                 width: computeWidth(d, i),
-                color: computeColor(d, i)
+                color: computeColor(d, i),
+		label: computeLabel(d, i),
+		dx: computeDX(d,i),
+		dwidth: computeDWidth(d, i),
+		dcolor: computeDColor(d, i)
             }
          })
 console.log(viz)
@@ -112,16 +136,26 @@ var result = _.map(viz, function(d){
 return result.join('\n')
 
 {% template %}
-<g transform="translate(120 ${d.y})">
-    <rect
-         x="-${d.width}"
+
+<g transform="translate(0 ${d.y})">
+    <rect         
+	 x = "${d.x}"
          width="${d.width}"
          height="20"
          style="fill:${d.color};
-                stroke-width:1;
+                stroke-width:3;
                 stroke:rgb(0,0,0)" />
+    <rect         
+	 x = "${d.dx}"
+         width="${d.dwidth}"
+         height="20"
+         style="fill:${d.dcolor};
+                stroke-width:3;
+                stroke:rgb(0,0,0)" />
+	<text transform = "translate(110,15)">
+		${d.label}
+	</text>
 </g>
-
 {% output %}
 
 <g transform="translate(120 0)">

@@ -84,22 +84,30 @@ function computeX(d, i) {
 }
 
 function computeWidth(d, i) {
-    return i * 10 + 10
+    return d['Attack']
 }
 
 function computeHeight(d, i) {
-    return i * 10 + 10
+    return d['Defense']
 }
 
 // HINT: figure out a way to compute a Y offset on each call to return the sum of of the heights
 // of all previous bars
+var ySoFar = 0
 function computeY(d, i) {
-    return i * 20
+    thisY = ySoFar
+    ySoFar = ySoFar + computeHeight(d,i)
+    return thisY 
 }
 
 function computeColor(d, i) {
     return 'red'
 }
+
+function computeLabel(d,i) {
+	return d['Name']
+}
+
 
 var viz = _.map(data, function(d, i){
             return {
@@ -107,7 +115,8 @@ var viz = _.map(data, function(d, i){
                 y: computeY(d, i),
                 height: computeHeight(d, i),
                 width: computeWidth(d, i),
-                color: computeColor(d, i)
+                color: computeColor(d, i),
+		label: computeLabel(d,i)
             }
          })
 console.log(viz)
@@ -125,6 +134,7 @@ return result.join('\n')
          style="fill:${d.color};
                 stroke-width:1;
                 stroke:rgb(0,0,0)" />
+ 	<text x="0" y="15">${d.label}</text>
 </g>
 
 {% output %}
