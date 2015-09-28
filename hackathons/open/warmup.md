@@ -27,8 +27,20 @@ var counts = [{"name": "AS","count": 3237},
     {"name": "BU","count": 378},
     {"name": "EB","count": 139},
     {"name": "EN","count": 573}]
-
 console.log(counts)
+
+
+count2= _.mapValues(groups,function(n){
+	return _.size(n)
+})
+console.log(count2)
+var count4 = []
+count3 = _.forEach(count2,function(v,k,n){
+	count4.push({"name":k,"count":v})
+})
+console.log(count3)
+console.log(count4)
+counts = count4
 
 // TODO: modify the code below to produce a nice vertical bar charts
 
@@ -41,7 +53,8 @@ function computeHeight(d, i) {
 }
 
 function computeWidth(d, i) {
-    return 20 * i + 100
+//    return 20 * i + 100
+	return d.count
 }
 
 function computeY(d, i) {

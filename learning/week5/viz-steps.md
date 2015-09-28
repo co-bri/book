@@ -115,7 +115,6 @@ function computeX(d, i) {
 }
 
 function computeHeight(d, i){
-	console.log(d)
 	return d["pop"]/ 5000000
     // TODO: fix this to return the correct height
     // return 10 + i * 50
@@ -181,7 +180,6 @@ data.countries = [{name: 'China', pop: 1393783836},
 
 function getPop(i){
 	p = _.pluck(data.countries,'pop')
-	console.log(p)
 	p1 = p[i]
 	return p1
 }
@@ -192,7 +190,6 @@ function sumWidths(i){
 	while(count > 0){
 		pos = pos + getPop(count-1)
 		count = count -  1
-		console.log(pos)	
 	}	
 	return pos/10000000 
 }

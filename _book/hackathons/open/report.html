@@ -45,10 +45,8 @@
         
     
     
-    <link rel="next" href="../../learning/week2/viz.html" />
     
-    
-    <link rel="prev" href="../../learning/week2/index.html" />
+    <link rel="prev" href="../../hackathons/open/warmup.html" />
     
 
         <!-- head:end -->
@@ -56,7 +54,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Mon Sep 28 2015 15:47:19 GMT-0600 (MDT)">
+    <div class="book" data-level="2.5.2" data-basepath="../.." data-revision="Mon Sep 28 2015 15:47:19 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -235,7 +233,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="learning/week2/report.html">
+        <li class="chapter " data-level="1.3.1" data-path="learning/week2/report.html">
             
                 
                     <a href="../../learning/week2/report.html">
@@ -739,7 +737,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5.2" data-path="hackathons/open/report.html">
+        <li class="chapter active" data-level="2.5.2" data-path="hackathons/open/report.html">
             
                 
                     <a href="../../hackathons/open/report.html">
@@ -869,52 +867,26 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="report">Report</h1>
-<p>As a class, we brainstormed and came up with a long list of further questions we can ask based
-on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
-the following:</p>
-<h1 id="how-many-of-the-students-are-cs-majors">How many of the students are CS majors?</h1>
-<p><pre><code>var x = _.filter(data.comments, function(n){
-        return _.includes(n.body,&quot;CS&quot;);
-});
+                        <p></p>
+<h1 id="report">Report</h1>
+<p>Use only Javascript and SVG to produce a data analysis / visualization report.</p>
+<h1 id="authors">Authors</h1>
+<p>This report is prepared by</p>
+<ul>
+<li><a href="http://co-bri.github.io/book/hackathons/index.html" target="_blank">Brian McKean</a></li>
+<li><a href="link%20to%20github%20account">Full name</a></li>
+<li><a href="link%20to%20github%20account">Full name</a></li>
+</ul>
+<p><a name="top"></a></p>
+<div id="autonav"></div>
 
-var countCS = _.size(x)
-var y = _.filter(data.comments, function(n){
-        return _.includes(n.body,&quot;Computer Science&quot;);
-});
-var countComputerScience = _.size(y)
-
-return (countCS + countComputerScience)</code></pre>
-The number of CS majors in the class is 20</p>
-<h1 id="how-many-peoples-names-start-with-a">How many peoples names start with A?</h1>
-<p><pre><code>var y = _.filter(data.comments, function(n){
-	var text = n.body
-	var text2 = _.first(text.split(&quot;\r\n&quot;))
-	var text3 = _.last(text2.split(&quot;Name:&quot;))
-        return text3.charAt(1) == &apos;A&apos;
-});
-var z = _.size(y)
-return z</code></pre>
-There are 4 students names start with A</p>
-<h1 id="how-many-of-the-students-are-not-cs-majors">How many of the students are not CS majors?</h1>
-<p><pre><code>var x = _.filter(data.comments, function(n){
-        return _.includes(n.body,&quot;CS&quot;);
-});
-
-var countCS = _.size(x)
-var y = _.filter(data.comments, function(n){
-        return _.includes(n.body,&quot;Computer Science&quot;);
-});
-var countComputerScience = _.size(y)
-return (data.comments.length - (countCS + countComputerScience))</code></pre>
-There are 6 students in the class who are not CS majors</p>
-<h1 id="what-is-the-user-id-for-the-login-zhya215">What is the user id for the login zhya215?</h1>
-<p><pre><code>var y = _.filter(data.comments, function(n){
-        return _.includes(n.user,&quot;zhya215&quot;);
-});
-z = _.pluck(y,&quot;id&quot;)
-return z</code></pre></p>
-<p>The user with id zhya215 is 134036701</p>
+<h1 id="-question-1">(Question 1)</h1>
+<p>Use the warmup exercise as the template to produce an answer here.</p>
+<h1 id="-question-2">(Question 2)</h1>
+<p>Use the warmup exercise as the template to produce an answer here.</p>
+<h1 id="-question-3">(Question 3)</h1>
+<p>Use the warmup exercise as the template to produce an answer here. Remove this
+question if you work as a unit of two.</p>
 
                     
                     </section>
@@ -925,10 +897,8 @@ return z</code></pre></p>
         </div>
 
         
-        <a href="../../learning/week2/index.html" class="navigation navigation-prev " aria-label="Previous page: Week 2"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/open/warmup.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Warmup"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../learning/week2/viz.html" class="navigation navigation-next " aria-label="Next page: Tableau Viz"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

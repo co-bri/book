@@ -1,3 +1,5 @@
+{% data src="/Users/brian/bmckean/EconData/econ.json" %}
+{% enddata %}
 # Report
 
 Use only Javascript and SVG to produce a data analysis / visualization report.
@@ -5,7 +7,7 @@ Use only Javascript and SVG to produce a data analysis / visualization report.
 # Authors
 
 This report is prepared by
-* [Full name](link to github account)
+* [Brian McKean](http://co-bri.github.io/book/hackathons/index.html)
 * [Full name](link to github account)
 * [Full name](link to github account)
 

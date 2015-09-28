@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Report | book</title>
+        <title>Warmup | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../../learning/week2/viz.html" />
+    <link rel="next" href="../../hackathons/open/report.html" />
     
     
-    <link rel="prev" href="../../learning/week2/index.html" />
+    <link rel="prev" href="../../hackathons/open/index.html" />
     
 
         <!-- head:end -->
@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Mon Sep 28 2015 15:47:19 GMT-0600 (MDT)">
+    <div class="book" data-level="2.5.1" data-basepath="../.." data-revision="Mon Sep 28 2015 15:47:19 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -235,7 +235,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="learning/week2/report.html">
+        <li class="chapter " data-level="1.3.1" data-path="learning/week2/report.html">
             
                 
                     <a href="../../learning/week2/report.html">
@@ -724,7 +724,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.5.1" data-path="hackathons/open/warmup.html">
+        <li class="chapter active" data-level="2.5.1" data-path="hackathons/open/warmup.html">
             
                 
                     <a href="../../hackathons/open/warmup.html">
@@ -869,52 +869,191 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="report">Report</h1>
-<p>As a class, we brainstormed and came up with a long list of further questions we can ask based
-on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
-the following:</p>
-<h1 id="how-many-of-the-students-are-cs-majors">How many of the students are CS majors?</h1>
-<p><pre><code>var x = _.filter(data.comments, function(n){
-        return _.includes(n.body,&quot;CS&quot;);
-});
+                        <h1 id="warmup">Warmup</h1>
+<p>Complete this warmup exercise to get an idea how to put all the different pieces
+together to generate an end-to-end data analysis viz report.</p>
+<p><a name="top"></a></p>
+<div id="autonav"></div>
 
-var countCS = _.size(x)
-var y = _.filter(data.comments, function(n){
-        return _.includes(n.body,&quot;Computer Science&quot;);
-});
-var countComputerScience = _.size(y)
+<p></p>
+<p></p><h2> <span class="text">What is the distribution of courses across colleges?</span><a href="#top" style="font-size: 14px; float: right;">[top]</a></h2><div class="lodashexercise">   <a name="foo">   </a><div class="output">       <div class="section-title">Viz<svg width="100%" height="400"><rect x="0" y="0" height="20" width="3237" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="20" height="20" width="378" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="40" height="20" width="139" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="60" height="20" width="573" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="80" height="20" width="51" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="100" height="20" width="96" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="120" height="20" width="176" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="140" height="20" width="241" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="160" height="20" width="30" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="180" height="20" width="19" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="0" y="200" height="20" width="60" style="fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/></svg></div></div><div class="output"><div class="section-title">                <pre><code>&lt;rect x=&quot;0&quot;
+      y=&quot;0&quot;
+      height=&quot;20&quot;
+      width=&quot;3237&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;20&quot;
+      height=&quot;20&quot;
+      width=&quot;378&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;40&quot;
+      height=&quot;20&quot;
+      width=&quot;139&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;60&quot;
+      height=&quot;20&quot;
+      width=&quot;573&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;80&quot;
+      height=&quot;20&quot;
+      width=&quot;51&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;100&quot;
+      height=&quot;20&quot;
+      width=&quot;96&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;120&quot;
+      height=&quot;20&quot;
+      width=&quot;176&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;140&quot;
+      height=&quot;20&quot;
+      width=&quot;241&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;160&quot;
+      height=&quot;20&quot;
+      width=&quot;30&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;180&quot;
+      height=&quot;20&quot;
+      width=&quot;19&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;0&quot;
+      y=&quot;200&quot;
+      height=&quot;20&quot;
+      width=&quot;60&quot;
+      style=&quot;fill:red;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;</code></pre></div></div><div class="section-title">Solution: SVG Template<pre><code>&lt;rect x=&quot;0&quot;
+      y=&quot;${d.y}&quot;
+      height=&quot;20&quot;
+      width=&quot;${d.width}&quot;
+      style=&quot;fill:${d.color};
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;</code></pre></div><div class="section-title">Solution: Javascript</div><pre><code>var groups = _.groupBy(data, function(d){
+    return d[&apos;CrsPBAColl&apos;]
+})
 
-return (countCS + countComputerScience)</code></pre>
-The number of CS majors in the class is 20</p>
-<h1 id="how-many-peoples-names-start-with-a">How many peoples names start with A?</h1>
-<p><pre><code>var y = _.filter(data.comments, function(n){
-	var text = n.body
-	var text2 = _.first(text.split(&quot;\r\n&quot;))
-	var text3 = _.last(text2.split(&quot;Name:&quot;))
-        return text3.charAt(1) == &apos;A&apos;
-});
-var z = _.size(y)
-return z</code></pre>
-There are 4 students names start with A</p>
-<h1 id="how-many-of-the-students-are-not-cs-majors">How many of the students are not CS majors?</h1>
-<p><pre><code>var x = _.filter(data.comments, function(n){
-        return _.includes(n.body,&quot;CS&quot;);
-});
+// TODO: add real code to convert groups (which is an object) into an array like below
+// This array should have a lot more elements.
+var counts = [{&quot;name&quot;: &quot;AS&quot;,&quot;count&quot;: 3237},
+    {&quot;name&quot;: &quot;BU&quot;,&quot;count&quot;: 378},
+    {&quot;name&quot;: &quot;EB&quot;,&quot;count&quot;: 139},
+    {&quot;name&quot;: &quot;EN&quot;,&quot;count&quot;: 573}]
+console.log(counts)
 
-var countCS = _.size(x)
-var y = _.filter(data.comments, function(n){
-        return _.includes(n.body,&quot;Computer Science&quot;);
-});
-var countComputerScience = _.size(y)
-return (data.comments.length - (countCS + countComputerScience))</code></pre>
-There are 6 students in the class who are not CS majors</p>
-<h1 id="what-is-the-user-id-for-the-login-zhya215">What is the user id for the login zhya215?</h1>
-<p><pre><code>var y = _.filter(data.comments, function(n){
-        return _.includes(n.user,&quot;zhya215&quot;);
-});
-z = _.pluck(y,&quot;id&quot;)
-return z</code></pre></p>
-<p>The user with id zhya215 is 134036701</p>
+
+count2= _.mapValues(groups,function(n){
+	return _.size(n)
+})
+console.log(count2)
+var count4 = []
+count3 = _.forEach(count2,function(v,k,n){
+	count4.push({&quot;name&quot;:k,&quot;count&quot;:v})
+})
+console.log(count3)
+console.log(count4)
+counts = count4
+
+// TODO: modify the code below to produce a nice vertical bar charts
+
+function computeX(d, i) {
+    return 0
+}
+
+function computeHeight(d, i) {
+    return 20
+}
+
+function computeWidth(d, i) {
+//    return 20 * i + 100
+	return d.count
+}
+
+function computeY(d, i) {
+    return 20 * i
+}
+
+function computeColor(d, i) {
+    return &apos;red&apos;
+}
+
+var viz = _.map(counts, function(d, i){
+            return {
+                x: computeX(d, i),
+                y: computeY(d, i),
+                height: computeHeight(d, i),
+                width: computeWidth(d, i),
+                color: computeColor(d, i)
+            }
+         })
+console.log(viz)
+
+var result = _.map(viz, function(d){
+         // invoke the compiled template function on each viz data
+         return template({d: d})
+     })
+return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Console<div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;name&quot;:&quot;AS&quot;,&quot;count&quot;:3237},{&quot;name&quot;:&quot;BU&quot;,&quot;count&quot;:378},{&quot;name&quot;:&quot;EB&quot;,&quot;count&quot;:139},{&quot;name&quot;:&quot;EN&quot;,&quot;count&quot;:573}]</span></div><div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       {&quot;AS&quot;:3237,&quot;BU&quot;:378,&quot;EB&quot;:139,&quot;EN&quot;:573,&quot;GR&quot;:51,&quot;JR&quot;:96,&quot;LW&quot;:176,&quot;MB&quot;:241,&quot;XX&quot;:30,&quot;undefined&quot;:19,&quot;AP&quot;:60}</span></div><div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       {&quot;AS&quot;:3237,&quot;BU&quot;:378,&quot;EB&quot;:139,&quot;EN&quot;:573,&quot;GR&quot;:51,&quot;JR&quot;:96,&quot;LW&quot;:176,&quot;MB&quot;:241,&quot;XX&quot;:30,&quot;undefined&quot;:19,&quot;AP&quot;:60}</span></div><div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;name&quot;:&quot;AS&quot;,&quot;count&quot;:3237},{&quot;name&quot;:&quot;BU&quot;,&quot;count&quot;:378},{&quot;name&quot;:&quot;EB&quot;,&quot;count&quot;:139},{&quot;name&quot;:&quot;EN&quot;,&quot;count&quot;:573},{&quot;name&quot;:&quot;GR&quot;,&quot;count&quot;:51},{&quot;name&quot;:&quot;JR&quot;,&quot;count&quot;:96},{&quot;name&quot;:&quot;LW&quot;,&quot;count&quot;:176},{&quot;name&quot;:&quot;MB&quot;,&quot;count&quot;:241},{&quot;name&quot;:&quot;XX&quot;,&quot;count&quot;:30},{&quot;name&quot;:&quot;undefined&quot;,&quot;count&quot;:19},{&quot;name&quot;:&quot;AP&quot;,&quot;count&quot;:60}]</span></div><div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;x&quot;:0,&quot;y&quot;:0,&quot;height&quot;:20,&quot;width&quot;:3237,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:20,&quot;height&quot;:20,&quot;width&quot;:378,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:40,&quot;height&quot;:20,&quot;width&quot;:139,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:60,&quot;height&quot;:20,&quot;width&quot;:573,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:80,&quot;height&quot;:20,&quot;width&quot;:51,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:100,&quot;height&quot;:20,&quot;width&quot;:96,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:120,&quot;height&quot;:20,&quot;width&quot;:176,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:140,&quot;height&quot;:20,&quot;width&quot;:241,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:160,&quot;height&quot;:20,&quot;width&quot;:30,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:180,&quot;height&quot;:20,&quot;width&quot;:19,&quot;color&quot;:&quot;red&quot;},{&quot;x&quot;:0,&quot;y&quot;:200,&quot;height&quot;:20,&quot;width&quot;:60,&quot;color&quot;:&quot;red&quot;}]</span></div></div></div><p></p>
 
                     
                     </section>
@@ -925,10 +1064,10 @@ return z</code></pre></p>
         </div>
 
         
-        <a href="../../learning/week2/index.html" class="navigation navigation-prev " aria-label="Previous page: Week 2"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/open/index.html" class="navigation navigation-prev " aria-label="Previous page: Open"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../learning/week2/viz.html" class="navigation navigation-next " aria-label="Next page: Tableau Viz"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/open/report.html" class="navigation navigation-next " aria-label="Next page: Report"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
