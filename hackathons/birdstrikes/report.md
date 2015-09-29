@@ -59,12 +59,12 @@ The leftmost barchart in orange shows the airports with the most expensive avera
 
 # Which aircraft type had the most bird hits? 
 
-![screenshot](2.png)
+![screenshot](3.png)
 
 
 #  Which species causes the most bird hits?
 
-![screenshot](3.png)
+![screenshot](2.png)
 
 
 # What is the geo distribution of bird strikes?

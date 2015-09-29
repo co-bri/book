@@ -44,7 +44,7 @@ This report is prepared by
 {% title %}
 
 What are the top 5 counties in colorado in terms of annual wages in 2014
-
+by Brian
 {% solution %}
 
 var coloCounties = _.filter(data,function(n){
@@ -65,7 +65,7 @@ var sortPay =
    _.sortByOrder(
       _.pairs(pay),
         function(d) {return d[1]},
-        'pay')
+        'desc')
 var top5 =  _.take(sortPay, 5)
 
 
@@ -136,4 +136,5 @@ return result.join('\n')
 
 {% title %}
  What is the distribution of employer size per state?
+by Ming
 {% endviz %}

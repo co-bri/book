@@ -55,17 +55,25 @@ var avgcost  = _.mapValues(airports,function(n){
 	var totalCost = _.sum(cost2)
 	return (totalCost/number)
 })
+// Create sorted list 
+var sorted = 
+    _.sortByOrder(
+        _.pairs(avgcost),
+        function(d) {return d[1]},
+        'desc')
 
-big = _.max(avgcost)
-most = _.pick(avgcost,function(n){
-        return n == big
-})
-return most
+// Just return top 10
+return _.take(sorted, 10)
+
 {% endlodash %}
-
+<table>
 {% for key, value in result %}
-        The worse airport with the highest average cost is {{key}} with ${{value}} 
+    <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+    </tr>
 {% endfor %}
+</table>
 
 # (Question 3) by Ming Liew 
 # Which airline have to incur most repair cost due to damage ? ( sumi6109)

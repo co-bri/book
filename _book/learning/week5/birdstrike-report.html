@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.6.1" data-basepath="../.." data-revision="Tue Sep 29 2015 08:56:31 GMT-0600 (MDT)">
+    <div class="book" data-level="1.6.1" data-basepath="../.." data-revision="Tue Sep 29 2015 13:45:25 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -913,14 +913,70 @@ var avgcost  = _.mapValues(airports,function(n){
 	var totalCost = _.sum(cost2)
 	return (totalCost/number)
 })
+// Create sorted list 
+var sorted = 
+    _.sortByOrder(
+        _.pairs(avgcost),
+        function(d) {return d[1]},
+        &apos;desc&apos;)
 
-big = _.max(avgcost)
-most = _.pick(avgcost,function(n){
-        return n == big
-})
-return most</code></pre></p>
-<pre><code>    The worse airport with the highest average cost is BARNESVILLE-BRADFLD with $976 
-</code></pre><h1 id="-question-3-by-ming-liew">(Question 3) by Ming Liew</h1>
+// Just return top 10
+return _.take(sorted, 10)</code></pre></p>
+<table>
+
+    <tr>
+        <td>BARNESVILLE-BRADFLD</td>
+        <td>976</td>
+    </tr>
+
+    <tr>
+        <td>ANGOLA</td>
+        <td>855</td>
+    </tr>
+
+    <tr>
+        <td>LOGAN COUNTY ARPT</td>
+        <td>852</td>
+    </tr>
+
+    <tr>
+        <td>FERANDINA BEACH MUNICIPAL ARPT</td>
+        <td>843</td>
+    </tr>
+
+    <tr>
+        <td>BIRD FIELD AIRPORT</td>
+        <td>833</td>
+    </tr>
+
+    <tr>
+        <td>COLUMBUS MUNICIPAL ARPT (NE)</td>
+        <td>802</td>
+    </tr>
+
+    <tr>
+        <td>ROSEAU MUNI ARPT/RUDY BILLBERG FLD</td>
+        <td>760</td>
+    </tr>
+
+    <tr>
+        <td>NEW BRAUNFELS MUNICIPAL ARPT</td>
+        <td>562</td>
+    </tr>
+
+    <tr>
+        <td>ANGELINA COUNTY</td>
+        <td>527</td>
+    </tr>
+
+    <tr>
+        <td>BRIGHAM CITY ARPT</td>
+        <td>496</td>
+    </tr>
+
+</table>
+
+<h1 id="-question-3-by-ming-liew">(Question 3) by Ming Liew</h1>
 <h1 id="which-airline-have-to-incur-most-repair-cost-due-to-damage-sumi6109">Which airline have to incur most repair cost due to damage ? ( sumi6109)</h1>
 <p><pre><code>airlines = _.groupBy(names,function(n){
         return n[&quot;Aircraft: Airline/Operator&quot;]
