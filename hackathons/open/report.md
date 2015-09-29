@@ -8,13 +8,106 @@ Use only Javascript and SVG to produce a data analysis / visualization report.
 
 This report is prepared by
 * [Brian McKean](http://co-bri.github.io/book/hackathons/index.html)
-* [Full name](link to github account)
-* [Full name](link to github account)
-
+* [Ming Liew](link to github account)
+* [Data Source http://www.bls.gov/cew/datatoc.htm](http://www.bls.gov/cew/datatoc.htm)
 <a name="top"/>
 <div id="autonav"></div>
 
+{% viz %}
 # (Question 1)
+# Which are the top five counties in Colorado in terms of average annual salary
+coloCounties = _.filter(data,function(n){
+	return (_.includes(n["Area"],"County") )  && ( n["Ownership"] == "Total Covered") && ( n["St Name"] == "Colorado") 
+})
+
+
+{% title %}
+What are the top 5 counties in colorado in terms of annual wages
+{% solution %}
+
+
+//console.log(coloCounties)
+counties = _.groupBy(coloCounties, function(n){
+	return n["Area"]	
+})
+pay = _.mapValues(counties, function(n){
+	console.log(n)
+	var y =  _.pluck(n,"Annual Average Pay")
+	y = y.toString()
+	var x = _.parseInt(y.split(',').join(''))
+	return x
+})
+console.log(pay)
+// Finally, convert object to array type and sort by pay 
+var sortPay = 
+   _.sortByOrder(
+      _.pairs(pay),
+        function(d) {return d[1]},
+        'pay')
+console.log(sortPay)
+var top5 =  _.take(sortPay, 5)
+
+
+function computeX(d, i) {
+    return 0
+}
+
+function computeHeight(d, i) {
+    return 20
+}
+
+function computeWidth(d, i) {
+//    return 20 * i + 100
+        return d[1]/1000
+}
+
+function computeY(d, i) {
+    return 20 * i
+}
+
+function computeColor(d, i) {
+    return 'red'
+}
+
+var viz = _.map(top5, function(d, i){
+            return {
+                x: computeX(d, i),
+                y: computeY(d, i),
+                height: computeHeight(d, i),
+                width: computeWidth(d, i),
+                color: computeColor(d, i)
+            }
+         })
+console.log(viz)
+
+var result = _.map(viz, function(d){
+         // invoke the compiled template function on each viz data
+         return template({d: d})
+     })
+return result.join('\n')
+
+{% template %}
+
+<rect x="0"
+      y="${d.y}"
+      height="20"
+      width="${d.width}"
+      style="fill:${d.color};
+             stroke-width:3;
+             stroke:rgb(0,0,0)" />
+
+// Just return top 5 
+return top5
+{% endviz %}
+<table>
+{% for key, value in result %}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+    </tr>
+{% endfor %}
+</table>
+
 
 Use the warmup exercise as the template to produce an answer here.
 
