@@ -1,30 +1,5 @@
 {% data src="/Users/brian/bmckean/EconData/econ.json" %}
 {% enddata %}
-# Report
-
-# This section is the in-class assignment to pick a topic and outline steps for analysis
-## Topic: Cars
-## Group: Brian McKean, Ming Liew, Karen Blakemore, Matt Schroder
- Steps
- - Collect
- - Decompile
- - Extract
- - Stats
- - Diff 
-
- For examining the subject of cars we chose to look at
- - 1) Model with the most sales
- - 2) Average Selling Price of Models
- We then will get data to see if auto characteristics are 
- related to these two factors
- - Collect: Use a web sites like: Edmunds.com, kbb.com, consumerreports.org, http://www.nhtsa.gov/
- - Decompile: Data probably does not need to decompiled
- - Extract: Extract from dat the information we're looking for
- - Stats: In addition to Units sold by year, make and model and Average Sale price
-We look for: HP, Engine Type, Color, Fuel, Body Style, MPG, Drive Train, 
- - Diff: Look for difference by make, model & year for stats to see if
-there are correlations to units sold or average sales price
-
 # Small Group Assignment
 Use only Javascript and SVG to produce a data analysis / visualization report.
 
