@@ -54,7 +54,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.5.2" data-basepath="../.." data-revision="Thu Oct 01 2015 08:39:14 GMT-0600 (MDT)">
+    <div class="book" data-level="2.5.2" data-basepath="../.." data-revision="Sat Oct 03 2015 17:24:05 GMT-0600 (MDT)">
     
 
 <div class="book-summary">
@@ -1093,8 +1093,581 @@ var result = _.map(viz, function(d){
          return template({d: d})
      })
 return result.join(&apos;\n&apos;)</code></pre></div><p></p>
-<p></p><h2> <span class="text">What is the distribution of employer size per state?
-by Ming</span><a href="#top" style="font-size: 14px; float: right;">[top]</a></h2><div class="lodashexercise">   <a name="foo">   </a><div class="output">       <div class="section-title">Viz<svg width="100%" height="400"/></div></div><div class="output"><div class="section-title">                <pre><code></code></pre></div></div><div class="section-title">Solution: SVG Template<pre><code></code></pre></div><div class="section-title">Solution: Javascript</div><pre><code></code></pre></div><p></p>
+<p></p><h2> <span class="text">By state what is the average number of empoyees per employer?
+By Mingqi Liew</span><a href="#top" style="font-size: 14px; float: right;">[top]</a></h2><div class="lodashexercise">   <a name="foo">   </a><div class="output">       <div class="section-title">Viz<svg width="100%" height="400"><rect x="0" y="0" height="158.66575281817254" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="10" y="0" height="149.44992756247734" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="20" y="0" height="172.7923704016223" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="30" y="0" height="133.31682655211728" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="40" y="0" height="115.14681525183" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="50" y="0" height="134.77009091567862" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="60" y="0" height="145.14575378538512" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="70" y="0" height="141.31709758131777" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="80" y="0" height="201.22192793687577" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="90" y="0" height="121.69831246802728" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="100" y="0" height="143.5902475848636" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="110" y="0" height="163.00791419348118" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="120" y="0" height="118.22147835153376" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="130" y="0" height="139.35788758316625" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="140" y="0" height="182.5745738412081" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="150" y="0" height="152.46957291436158" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="160" y="0" height="159.08494127025062" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="170" y="0" height="149.20389054939974" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="180" y="0" height="154.766291230893" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="190" y="0" height="119.86620104359126" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="200" y="0" height="152.65970934752707" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="210" y="0" height="144.98595463195096" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="220" y="0" height="172.96759296459038" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="230" y="0" height="165.67460967602958" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="240" y="0" height="154.6861672278339" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="250" y="0" height="144.3986447723066" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="260" y="0" height="100.26832490547127" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="270" y="0" height="134.5129094631483" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="280" y="0" height="157.78648191158524" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="290" y="0" height="125.62223068749122" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="300" y="0" height="147.74259047750897" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="310" y="0" height="142.1526307361079" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="320" y="0" height="142.7198283511059" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="330" y="0" height="156.0757560604079" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="340" y="0" height="140.770570171273" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="350" y="0" height="179.3616498555338" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="360" y="0" height="147.90042238253653" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="370" y="0" height="127.94819520946541" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="380" y="0" height="162.99145545952535" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="390" y="0" height="129.52278445624825" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="400" y="0" height="160.94798159061187" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="410" y="0" height="128.51169627220415" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="420" y="0" height="188.70863040300833" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="430" y="0" height="182.49207754384614" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="440" y="0" height="143.3010537992235" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="450" y="0" height="124.78360655737704" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="460" y="0" height="152.21359199040447" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="470" y="0" height="125.27936709173383" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="480" y="0" height="140.5458629126058" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="490" y="0" height="168.26458783198524" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/>
+<rect x="500" y="0" height="111.44838937220784" width="10" style="fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)"/></svg></div></div><div class="output"><div class="section-title">                <pre><code>&lt;rect x=&quot;0&quot;
+      y=&quot;0&quot;
+      height=&quot;158.66575281817254&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;10&quot;
+      y=&quot;0&quot;
+      height=&quot;149.44992756247734&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;20&quot;
+      y=&quot;0&quot;
+      height=&quot;172.7923704016223&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;30&quot;
+      y=&quot;0&quot;
+      height=&quot;133.31682655211728&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;40&quot;
+      y=&quot;0&quot;
+      height=&quot;115.14681525183&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;50&quot;
+      y=&quot;0&quot;
+      height=&quot;134.77009091567862&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;60&quot;
+      y=&quot;0&quot;
+      height=&quot;145.14575378538512&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;70&quot;
+      y=&quot;0&quot;
+      height=&quot;141.31709758131777&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;80&quot;
+      y=&quot;0&quot;
+      height=&quot;201.22192793687577&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;90&quot;
+      y=&quot;0&quot;
+      height=&quot;121.69831246802728&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;100&quot;
+      y=&quot;0&quot;
+      height=&quot;143.5902475848636&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;110&quot;
+      y=&quot;0&quot;
+      height=&quot;163.00791419348118&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;120&quot;
+      y=&quot;0&quot;
+      height=&quot;118.22147835153376&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;130&quot;
+      y=&quot;0&quot;
+      height=&quot;139.35788758316625&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;140&quot;
+      y=&quot;0&quot;
+      height=&quot;182.5745738412081&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;150&quot;
+      y=&quot;0&quot;
+      height=&quot;152.46957291436158&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;160&quot;
+      y=&quot;0&quot;
+      height=&quot;159.08494127025062&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;170&quot;
+      y=&quot;0&quot;
+      height=&quot;149.20389054939974&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;180&quot;
+      y=&quot;0&quot;
+      height=&quot;154.766291230893&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;190&quot;
+      y=&quot;0&quot;
+      height=&quot;119.86620104359126&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;200&quot;
+      y=&quot;0&quot;
+      height=&quot;152.65970934752707&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;210&quot;
+      y=&quot;0&quot;
+      height=&quot;144.98595463195096&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;220&quot;
+      y=&quot;0&quot;
+      height=&quot;172.96759296459038&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;230&quot;
+      y=&quot;0&quot;
+      height=&quot;165.67460967602958&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;240&quot;
+      y=&quot;0&quot;
+      height=&quot;154.6861672278339&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;250&quot;
+      y=&quot;0&quot;
+      height=&quot;144.3986447723066&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;260&quot;
+      y=&quot;0&quot;
+      height=&quot;100.26832490547127&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;270&quot;
+      y=&quot;0&quot;
+      height=&quot;134.5129094631483&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;280&quot;
+      y=&quot;0&quot;
+      height=&quot;157.78648191158524&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;290&quot;
+      y=&quot;0&quot;
+      height=&quot;125.62223068749122&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;300&quot;
+      y=&quot;0&quot;
+      height=&quot;147.74259047750897&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;310&quot;
+      y=&quot;0&quot;
+      height=&quot;142.1526307361079&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;320&quot;
+      y=&quot;0&quot;
+      height=&quot;142.7198283511059&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;330&quot;
+      y=&quot;0&quot;
+      height=&quot;156.0757560604079&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;340&quot;
+      y=&quot;0&quot;
+      height=&quot;140.770570171273&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;350&quot;
+      y=&quot;0&quot;
+      height=&quot;179.3616498555338&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;360&quot;
+      y=&quot;0&quot;
+      height=&quot;147.90042238253653&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;370&quot;
+      y=&quot;0&quot;
+      height=&quot;127.94819520946541&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;380&quot;
+      y=&quot;0&quot;
+      height=&quot;162.99145545952535&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;390&quot;
+      y=&quot;0&quot;
+      height=&quot;129.52278445624825&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;400&quot;
+      y=&quot;0&quot;
+      height=&quot;160.94798159061187&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;410&quot;
+      y=&quot;0&quot;
+      height=&quot;128.51169627220415&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;420&quot;
+      y=&quot;0&quot;
+      height=&quot;188.70863040300833&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;430&quot;
+      y=&quot;0&quot;
+      height=&quot;182.49207754384614&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;440&quot;
+      y=&quot;0&quot;
+      height=&quot;143.3010537992235&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;450&quot;
+      y=&quot;0&quot;
+      height=&quot;124.78360655737704&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;460&quot;
+      y=&quot;0&quot;
+      height=&quot;152.21359199040447&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;470&quot;
+      y=&quot;0&quot;
+      height=&quot;125.27936709173383&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;480&quot;
+      y=&quot;0&quot;
+      height=&quot;140.5458629126058&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;490&quot;
+      y=&quot;0&quot;
+      height=&quot;168.26458783198524&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;
+&lt;rect x=&quot;500&quot;
+      y=&quot;0&quot;
+      height=&quot;111.44838937220784&quot;
+      width=&quot;10&quot;
+      style=&quot;fill:green;
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;</code></pre></div></div><div class="section-title">Solution: SVG Template<pre><code>&lt;rect x=&quot;${d.x}&quot;
+      y=&quot;${d.y}&quot;
+      height=&quot;${d.height}&quot;
+      width=&quot;${d.width}&quot;
+      style=&quot;fill:${d.color};
+             stroke-width:3;
+             stroke:rgb(0,0,0)&quot; /&gt;</code></pre></div><div class="section-title">Solution: Javascript</div><pre><code>var S = _.filter(data,function(x){
+    return _.contains(x[&quot;Area Type&quot;], &quot;State&quot;) &amp;&amp; _.contains(x[&quot;Ownership&quot;],&quot;Total Covered&quot;);
+});
+var group = _.groupBy(S, function(x){
+	return x[&quot;St Name&quot;];
+});
+var a = _.map(group, function(x,values){
+	
+})
+
+var map = _.map(group, function(x,value){
+	var est = _.pluck(x,&quot;Annual Average Establishment Count&quot;);
+	var emp = _.pluck(x,&quot;Annual Average Employment&quot;);
+	var str_est = est.toString();
+	var str_emp = emp.toString();
+	var est_n = _.parseInt(str_est.split(&quot;,&quot;).join(&quot;&quot;));
+	var emp_n = _.parseInt(str_emp.split(&quot;,&quot;).join(&quot;&quot;));
+	var diff = emp_n/est_n;
+	return {&quot;state&quot;: value, &quot;est&quot;: diff};
+});
+
+console.log(map);
+
+function computeX(d, i) {
+    return i*10;
+}
+
+function computeHeight(d, i) {
+
+    return d.est *10 ;
+}
+
+function computeWidth(d, i) {
+    return 10;
+}
+
+function computeY(d, i) {
+    return 0;
+}
+
+function computeColor(d, i) {
+    return &apos;green&apos;
+}
+
+var viz = _.map(map, function(d, i){
+            return {
+                x: computeX(d, i),
+                y: computeY(d, i),
+                height: computeHeight(d, i),
+                width: computeWidth(d, i),
+                color: computeColor(d, i)
+            }
+         })
+console.log(viz)
+
+var result = _.map(viz, function(d){
+         // invoke the compiled template function on each viz data
+         return template({d: d});
+     })
+return result.join(&apos;\n&apos;)</code></pre><div class="section-title">Console<div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;state&quot;:&quot;Alabama&quot;,&quot;est&quot;:15.866575281817253},{&quot;state&quot;:&quot;Alaska&quot;,&quot;est&quot;:14.944992756247736},{&quot;state&quot;:&quot;Arizona&quot;,&quot;est&quot;:17.27923704016223},{&quot;state&quot;:&quot;Arkansas&quot;,&quot;est&quot;:13.33168265521173},{&quot;state&quot;:&quot;California&quot;,&quot;est&quot;:11.514681525183},{&quot;state&quot;:&quot;Colorado&quot;,&quot;est&quot;:13.477009091567863},{&quot;state&quot;:&quot;Connecticut&quot;,&quot;est&quot;:14.514575378538511},{&quot;state&quot;:&quot;Delaware&quot;,&quot;est&quot;:14.131709758131777},{&quot;state&quot;:&quot;District of Columbia&quot;,&quot;est&quot;:20.122192793687578},{&quot;state&quot;:&quot;Florida&quot;,&quot;est&quot;:12.169831246802728},{&quot;state&quot;:&quot;Georgia&quot;,&quot;est&quot;:14.35902475848636},{&quot;state&quot;:&quot;Hawaii&quot;,&quot;est&quot;:16.30079141934812},{&quot;state&quot;:&quot;Idaho&quot;,&quot;est&quot;:11.822147835153377},{&quot;state&quot;:&quot;Illinois&quot;,&quot;est&quot;:13.935788758316626},{&quot;state&quot;:&quot;Indiana&quot;,&quot;est&quot;:18.25745738412081},{&quot;state&quot;:&quot;Iowa&quot;,&quot;est&quot;:15.246957291436159},{&quot;state&quot;:&quot;Kansas&quot;,&quot;est&quot;:15.908494127025063},{&quot;state&quot;:&quot;Kentucky&quot;,&quot;est&quot;:14.920389054939974},{&quot;state&quot;:&quot;Louisiana&quot;,&quot;est&quot;:15.4766291230893},{&quot;state&quot;:&quot;Maine&quot;,&quot;est&quot;:11.986620104359126},&quot;... 31 more&quot;]</span></div><div style="border:1px solid #eee; margin-bottom: 5px;"><span style="font-size:10px;line-height:11px;" class="inspect">       [{&quot;x&quot;:0,&quot;y&quot;:0,&quot;height&quot;:158.66575281817254,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:10,&quot;y&quot;:0,&quot;height&quot;:149.44992756247734,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:20,&quot;y&quot;:0,&quot;height&quot;:172.7923704016223,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:30,&quot;y&quot;:0,&quot;height&quot;:133.31682655211728,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:40,&quot;y&quot;:0,&quot;height&quot;:115.14681525183,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:50,&quot;y&quot;:0,&quot;height&quot;:134.77009091567862,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:60,&quot;y&quot;:0,&quot;height&quot;:145.14575378538512,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:70,&quot;y&quot;:0,&quot;height&quot;:141.31709758131777,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:80,&quot;y&quot;:0,&quot;height&quot;:201.22192793687577,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:90,&quot;y&quot;:0,&quot;height&quot;:121.69831246802728,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:100,&quot;y&quot;:0,&quot;height&quot;:143.5902475848636,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:110,&quot;y&quot;:0,&quot;height&quot;:163.00791419348118,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:120,&quot;y&quot;:0,&quot;height&quot;:118.22147835153376,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:130,&quot;y&quot;:0,&quot;height&quot;:139.35788758316625,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:140,&quot;y&quot;:0,&quot;height&quot;:182.5745738412081,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:150,&quot;y&quot;:0,&quot;height&quot;:152.46957291436158,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:160,&quot;y&quot;:0,&quot;height&quot;:159.08494127025062,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:170,&quot;y&quot;:0,&quot;height&quot;:149.20389054939974,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:180,&quot;y&quot;:0,&quot;height&quot;:154.766291230893,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},{&quot;x&quot;:190,&quot;y&quot;:0,&quot;height&quot;:119.86620104359126,&quot;width&quot;:10,&quot;color&quot;:&quot;green&quot;},&quot;... 31 more&quot;]</span></div></div></div><p></p>
 
                     
                     </section>
