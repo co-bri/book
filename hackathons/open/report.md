@@ -107,9 +107,84 @@ return result.join('\n')
 {% endviz %}
 
 
+
 {% viz %}
 
 {% title %}
- What is the distribution of employer size per state?
-by Ming
+By state what is the average number of empoyees per employer?
+By Mingqi Liew
+
+{% solution %}
+var S = _.filter(data,function(x){
+    return _.contains(x["Area Type"], "State") && _.contains(x["Ownership"],"Total Covered");
+});
+var group = _.groupBy(S, function(x){
+	return x["St Name"];
+});
+var a = _.map(group, function(x,values){
+	
+})
+
+var map = _.map(group, function(x,value){
+	var est = _.pluck(x,"Annual Average Establishment Count");
+	var emp = _.pluck(x,"Annual Average Employment");
+	var str_est = est.toString();
+	var str_emp = emp.toString();
+	var est_n = _.parseInt(str_est.split(",").join(""));
+	var emp_n = _.parseInt(str_emp.split(",").join(""));
+	var diff = emp_n/est_n;
+	return {"state": value, "est": diff};
+});
+
+console.log(map);
+
+function computeX(d, i) {
+    return i*10;
+}
+
+function computeHeight(d, i) {
+
+    return d.est *10 ;
+}
+
+function computeWidth(d, i) {
+    return 10;
+}
+
+function computeY(d, i) {
+    return 0;
+}
+
+function computeColor(d, i) {
+    return 'green'
+}
+
+var viz = _.map(map, function(d, i){
+            return {
+                x: computeX(d, i),
+                y: computeY(d, i),
+                height: computeHeight(d, i),
+                width: computeWidth(d, i),
+                color: computeColor(d, i)
+            }
+         })
+console.log(viz)
+
+var result = _.map(viz, function(d){
+         // invoke the compiled template function on each viz data
+         return template({d: d});
+     })
+return result.join('\n')
+
+{% template %}
+
+<rect x="${d.x}"
+      y="${d.y}"
+      height="${d.height}"
+      width="${d.width}"
+      style="fill:${d.color};
+             stroke-width:3;
+             stroke:rgb(0,0,0)" />
+
 {% endviz %}
+
